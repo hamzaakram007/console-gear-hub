@@ -1,0 +1,260 @@
+{
+  "categories": [
+    {
+      "slug": "ssd",
+      "name": "SSD Storage",
+      "tagline": "Expand console storage for big single-player installs.",
+      "description": "Compare external and console-compatible SSDs so you have room for large games, patches, and capture clips without deleting your library every week.",
+      "consoleAngle": "PS5 and Xbox Series X|S both benefit from fast expansion when titles push 100+ GB.",
+      "specKeys": ["capacity", "interface", "consoleCompat", "readSpeed", "formFactor"],
+      "products": [
+        {
+          "id": "ssd-best",
+          "name": "HarborDrive 2TB NVMe",
+          "brand": "Placeholder Brand",
+          "pick": "best-overall",
+          "price": "$179",
+          "priceNote": "placeholder",
+          "summary": "Balanced speed and capacity for day-one console libraries.",
+          "specs": {
+            "capacity": "2 TB",
+            "interface": "PCIe 4.0 NVMe",
+            "consoleCompat": "PS5 / Xbox Series (w/ enclosure)",
+            "readSpeed": "5,500 MB/s",
+            "formFactor": "M.2 2280"
+          },
+          "affiliateUrl": "https://example.com/affiliate/ssd-best",
+          "affiliateLabel": "Check price (affiliate placeholder)"
+        },
+        {
+          "id": "ssd-budget",
+          "name": "DockByte 1TB USB-C",
+          "brand": "Placeholder Brand",
+          "pick": "best-budget",
+          "price": "$79",
+          "priceNote": "placeholder",
+          "summary": "Plug-and-play external drive for archives and media.",
+          "specs": {
+            "capacity": "1 TB",
+            "interface": "USB 3.2 Gen 2",
+            "consoleCompat": "PS5 / Xbox Series (external)",
+            "readSpeed": "1,050 MB/s",
+            "formFactor": "Portable enclosure"
+          },
+          "affiliateUrl": "https://example.com/affiliate/ssd-budget",
+          "affiliateLabel": "Check price (affiliate placeholder)"
+        },
+        {
+          "id": "ssd-premium",
+          "name": "TideVault 4TB Heatsink",
+          "brand": "Placeholder Brand",
+          "pick": "best-premium",
+          "price": "$329",
+          "priceNote": "placeholder",
+          "summary": "Headroom for a full console library plus capture projects.",
+          "specs": {
+            "capacity": "4 TB",
+            "interface": "PCIe 4.0 NVMe",
+            "consoleCompat": "PS5 official expansion slot",
+            "readSpeed": "7,300 MB/s",
+            "formFactor": "M.2 + heatsink"
+          },
+          "affiliateUrl": "https://example.com/affiliate/ssd-premium",
+          "affiliateLabel": "Check price (affiliate placeholder)"
+        }
+      ]
+    },
+    {
+      "slug": "headset",
+      "name": "Headsets",
+      "tagline": "Hear story dialogue clearly without drowning the mix.",
+      "description": "Console-first headsets ranked for comfort, mic clarity, and dialogue-friendly tuning — useful when you play long story sessions with chat on the side.",
+      "consoleAngle": "Look for 3.5mm / USB-C / wireless dongle support that works on PS5 and Xbox Series without PC software.",
+      "specKeys": ["connection", "mic", "battery", "surround", "weight"],
+      "products": [
+        {
+          "id": "headset-best",
+          "name": "CoastLine Dual Band",
+          "brand": "Placeholder Brand",
+          "pick": "best-overall",
+          "price": "$149",
+          "priceNote": "placeholder",
+          "summary": "Wireless comfort with a clear center channel for dialogue.",
+          "specs": {
+            "connection": "2.4 GHz + Bluetooth",
+            "mic": "Flip-to-mute boom",
+            "battery": "30 hours",
+            "surround": "Virtual 7.1 (console)",
+            "weight": "285 g"
+          },
+          "affiliateUrl": "https://example.com/affiliate/headset-best",
+          "affiliateLabel": "Check price (affiliate placeholder)"
+        },
+        {
+          "id": "headset-budget",
+          "name": "PierWire Lite",
+          "brand": "Placeholder Brand",
+          "pick": "best-budget",
+          "price": "$49",
+          "priceNote": "placeholder",
+          "summary": "Wired reliability for story nights — no battery anxiety.",
+          "specs": {
+            "connection": "3.5 mm",
+            "mic": "Inline + boom",
+            "battery": "N/A (wired)",
+            "surround": "Stereo",
+            "weight": "240 g"
+          },
+          "affiliateUrl": "https://example.com/affiliate/headset-budget",
+          "affiliateLabel": "Check price (affiliate placeholder)"
+        },
+        {
+          "id": "headset-premium",
+          "name": "NeonReef Pro ANC",
+          "brand": "Placeholder Brand",
+          "pick": "best-premium",
+          "price": "$249",
+          "priceNote": "placeholder",
+          "summary": "Premium pads and ANC for immersion without blasting volume.",
+          "specs": {
+            "connection": "2.4 GHz + USB-C",
+            "mic": "Broadcast-grade boom",
+            "battery": "40 hours",
+            "surround": "Spatial audio ready",
+            "weight": "310 g"
+          },
+          "affiliateUrl": "https://example.com/affiliate/headset-premium",
+          "affiliateLabel": "Check price (affiliate placeholder)"
+        }
+      ]
+    },
+    {
+      "slug": "tv-monitor",
+      "name": "TVs & Monitors",
+      "tagline": "Display picks tuned for console HDMI, VRR, and HDR.",
+      "description": "Side-by-side TVs and monitors that make sense for couch or desk console play — ALLM, VRR, and HDR without chasing PC-only features.",
+      "consoleAngle": "Prioritize HDMI 2.1 features your PS5 or Xbox Series can actually use.",
+      "specKeys": ["size", "refresh", "hdmi", "hdr", "vrr"],
+      "products": [
+        {
+          "id": "display-best",
+          "name": "Horizon 55 OLED C-Series",
+          "brand": "Placeholder Brand",
+          "pick": "best-overall",
+          "price": "$999",
+          "priceNote": "placeholder",
+          "summary": "Living-room OLED with the console feature set that matters.",
+          "specs": {
+            "size": "55\"",
+            "refresh": "120 Hz",
+            "hdmi": "HDMI 2.1 ×4",
+            "hdr": "Dolby Vision / HDR10",
+            "vrr": "ALLM + VRR"
+          },
+          "affiliateUrl": "https://example.com/affiliate/display-best",
+          "affiliateLabel": "Check price (affiliate placeholder)"
+        },
+        {
+          "id": "display-budget",
+          "name": "BayView 27 1440p",
+          "brand": "Placeholder Brand",
+          "pick": "best-budget",
+          "price": "$229",
+          "priceNote": "placeholder",
+          "summary": "Desk-friendly monitor for sharper HUD text on a budget.",
+          "specs": {
+            "size": "27\"",
+            "refresh": "144 Hz",
+            "hdmi": "HDMI 2.0",
+            "hdr": "HDR10",
+            "vrr": "FreeSync (console VRR)"
+          },
+          "affiliateUrl": "https://example.com/affiliate/display-budget",
+          "affiliateLabel": "Check price (affiliate placeholder)"
+        },
+        {
+          "id": "display-premium",
+          "name": "Marina Mini-LED 65",
+          "brand": "Placeholder Brand",
+          "pick": "best-premium",
+          "price": "$1,799",
+          "priceNote": "placeholder",
+          "summary": "Bright HDR for daytime rooms where OLEDs can struggle.",
+          "specs": {
+            "size": "65\"",
+            "refresh": "144 Hz",
+            "hdmi": "HDMI 2.1 ×4",
+            "hdr": "HDR10+ / Dolby Vision",
+            "vrr": "ALLM + VRR + 4K120"
+          },
+          "affiliateUrl": "https://example.com/affiliate/display-premium",
+          "affiliateLabel": "Check price (affiliate placeholder)"
+        }
+      ]
+    },
+    {
+      "slug": "capture-card",
+      "name": "Capture Cards",
+      "tagline": "Record and stream console footage without a PC gaming rig.",
+      "description": "Capture cards for creators who play on console and need clean HDMI pass-through to a streaming PC or laptop.",
+      "consoleAngle": "Works with PS5 / Xbox Series HDMI out — no mods, no unofficial clients.",
+      "specKeys": ["passthrough", "capture", "interface", "hdr", "formFactor"],
+      "products": [
+        {
+          "id": "capture-best",
+          "name": "SignalBay Dual",
+          "brand": "Placeholder Brand",
+          "pick": "best-overall",
+          "price": "$169",
+          "priceNote": "placeholder",
+          "summary": "Reliable 4K60 pass-through with 1080p60 capture for most creators.",
+          "specs": {
+            "passthrough": "4K60 HDR",
+            "capture": "1080p60",
+            "interface": "USB-C",
+            "hdr": "Pass-through yes",
+            "formFactor": "Compact USB"
+          },
+          "affiliateUrl": "https://example.com/affiliate/capture-best",
+          "affiliateLabel": "Check price (affiliate placeholder)"
+        },
+        {
+          "id": "capture-budget",
+          "name": "ClipDock Entry",
+          "brand": "Placeholder Brand",
+          "pick": "best-budget",
+          "price": "$69",
+          "priceNote": "placeholder",
+          "summary": "Simple 1080p capture for highlight reels and Discord clips.",
+          "specs": {
+            "passthrough": "1080p60",
+            "capture": "1080p30",
+            "interface": "USB 3.0",
+            "hdr": "SDR only",
+            "formFactor": "USB stick"
+          },
+          "affiliateUrl": "https://example.com/affiliate/capture-budget",
+          "affiliateLabel": "Check price (affiliate placeholder)"
+        },
+        {
+          "id": "capture-premium",
+          "name": "NeonPass Internal PCIe",
+          "brand": "Placeholder Brand",
+          "pick": "best-premium",
+          "price": "$249",
+          "priceNote": "placeholder",
+          "summary": "Low-latency internal capture when you already have a desktop.",
+          "specs": {
+            "passthrough": "4K60 HDR",
+            "capture": "4K60",
+            "interface": "PCIe",
+            "hdr": "HDR capture capable",
+            "formFactor": "Internal card"
+          },
+          "affiliateUrl": "https://example.com/affiliate/capture-premium",
+          "affiliateLabel": "Check price (affiliate placeholder)"
+        }
+      ]
+    }
+  ]
+}
