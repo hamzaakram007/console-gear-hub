@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { categories } from "@/lib/products";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { navCategories } from "@/lib/products";
 
 export function SiteFooter() {
   return (
@@ -11,20 +12,21 @@ export function SiteFooter() {
               Console Gear Hub
             </p>
             <p className="mt-2 max-w-md text-sm leading-relaxed text-teal-100/60">
-              Independent console accessory comparisons. Not affiliated with Sony,
-              Microsoft, Nintendo, or any game publisher.
+              Independent console accessory comparisons for PS5 and Xbox Series.
+              Not affiliated with Sony, Microsoft, Nintendo, Amazon, or any game
+              publisher.
             </p>
           </div>
           <div className="sm:text-right">
             <p className="text-xs font-medium uppercase tracking-wider text-teal-200/50">
               Categories
             </p>
-            <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 sm:justify-end">
-              {categories.map((cat) => (
+            <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-2 sm:justify-end">
+              {navCategories.map((cat) => (
                 <li key={cat.slug}>
                   <Link
                     href={`/category/${cat.slug}`}
-                    className="text-sm text-teal-100/70 transition hover:text-cyan-200"
+                    className="inline-flex min-h-10 items-center text-sm text-teal-100/70 transition hover:text-cyan-200"
                   >
                     {cat.name}
                   </Link>
@@ -34,21 +36,15 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <aside
-          className="mt-8 rounded-lg border border-amber-400/25 bg-amber-950/30 px-4 py-3 text-sm leading-relaxed text-amber-100/80"
-          aria-label="Affiliate disclosure"
-        >
-          <strong className="font-semibold text-amber-100">Disclosure:</strong>{" "}
-          Console Gear Hub may earn a commission when you buy through links on
-          this site. Prices and availability are placeholders until affiliate
-          programs are connected. We only recommend gear we would use on PS5 or
-          Xbox Series consoles. This site is not endorsed by any retailer or
-          manufacturer.
-        </aside>
+        <div className="mt-8">
+          <AffiliateDisclosure variant="footer" />
+        </div>
 
         <p className="mt-6 text-xs text-teal-100/40">
-          © 2026 Console Gear Hub · Built for console players · Placeholder
-          catalog MVP
+          © 2026 Console Gear Hub · Editorial comparisons for console players ·
+          Amazon product links use the{" "}
+          <code className="text-teal-100/55">AMAZON_TAG</code> environment
+          variable
         </p>
       </div>
     </footer>

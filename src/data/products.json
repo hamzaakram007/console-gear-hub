@@ -3,256 +3,388 @@
     {
       "slug": "ssd",
       "name": "SSD Storage",
-      "tagline": "Expand console storage for big single-player installs.",
-      "description": "Compare external and console-compatible SSDs so you have room for large games, patches, and capture clips without deleting your library every week.",
-      "consoleAngle": "PS5 and Xbox Series X|S both benefit from fast expansion when titles push 100+ GB.",
-      "specKeys": ["capacity", "interface", "consoleCompat", "readSpeed", "formFactor"],
+      "tagline": "Expand console storage for 100+ GB story installs without constant uninstalls.",
+      "description": "We compare console-friendly internal NVMe drives and plug-and-play externals so you can keep a growing single-player library, day-one patches, and capture clips without deleting games every weekend. Specs focus on what PS5 and Xbox Series actually accept—not PC-only marketing numbers.",
+      "consoleAngle": "PS5 official expansion needs a heatsinked PCIe 4.0 M.2; Xbox Series prefers certified Expansion Cards for internal speed, while USB externals work for archives and media on both.",
+      "specKeys": ["capacity", "interface", "consoleCompat", "readSpeed", "formFactor", "warranty"],
       "products": [
         {
           "id": "ssd-best",
-          "name": "HarborDrive 2TB NVMe",
-          "brand": "Placeholder Brand",
+          "name": "WD_BLACK SN850X 2TB with Heatsink",
+          "brand": "Western Digital",
           "pick": "best-overall",
           "price": "$179",
-          "priceNote": "placeholder",
-          "summary": "Balanced speed and capacity for day-one console libraries.",
+          "priceNote": "typical street",
+          "summary": "The sweet spot for most PS5 owners: official-slot friendly heatsink, real-world speeds that clear Sony’s bar, and enough room for a fat story library plus patches without babysitting storage every week.",
+          "bestFor": "PS5 players who want one install-and-forget internal upgrade",
+          "pros": [
+            "Heatsink model fits the PS5 expansion bay without a separate kit",
+            "Consistently clears official console speed requirements",
+            "2 TB covers several large titles plus capture overflow"
+          ],
+          "cons": [
+            "Pricier per TB than bare sticks without a heatsink",
+            "Overkill if you only need external archive space"
+          ],
           "specs": {
             "capacity": "2 TB",
             "interface": "PCIe 4.0 NVMe",
-            "consoleCompat": "PS5 / Xbox Series (w/ enclosure)",
-            "readSpeed": "5,500 MB/s",
-            "formFactor": "M.2 2280"
+            "consoleCompat": "PS5 expansion slot",
+            "readSpeed": "Up to 7,300 MB/s",
+            "formFactor": "M.2 2280 + heatsink",
+            "warranty": "5 years"
           },
-          "affiliateUrl": "https://example.com/affiliate/ssd-best",
-          "affiliateLabel": "Check price (affiliate placeholder)"
+          "amazonAsin": "B0B7CMZ3QH",
+          "amazonKeywords": "WD BLACK SN850X 2TB heatsink"
         },
         {
           "id": "ssd-budget",
-          "name": "DockByte 1TB USB-C",
-          "brand": "Placeholder Brand",
+          "name": "Samsung T7 Shield 1TB",
+          "brand": "Samsung",
           "pick": "best-budget",
-          "price": "$79",
-          "priceNote": "placeholder",
-          "summary": "Plug-and-play external drive for archives and media.",
+          "price": "$89",
+          "priceNote": "typical street",
+          "summary": "Rugged USB-C portable that works as an external game library and media dump on both PS5 and Xbox Series. Not a replacement for official internal expansion speed, but the best “plug it in and stop deleting games” move under $100.",
+          "bestFor": "Players who want zero internal installs and quick offloads",
+          "pros": [
+            "USB-C plug-and-play on PS5 and Xbox Series",
+            "IP65-rated shell survives couch and travel chaos",
+            "Fast enough for external game installs and media"
+          ],
+          "cons": [
+            "Won’t match internal NVMe load times",
+            "1 TB fills up fast with multiple 100 GB titles"
+          ],
           "specs": {
             "capacity": "1 TB",
             "interface": "USB 3.2 Gen 2",
             "consoleCompat": "PS5 / Xbox Series (external)",
-            "readSpeed": "1,050 MB/s",
-            "formFactor": "Portable enclosure"
+            "readSpeed": "Up to 1,050 MB/s",
+            "formFactor": "Portable enclosure",
+            "warranty": "3 years"
           },
-          "affiliateUrl": "https://example.com/affiliate/ssd-budget",
-          "affiliateLabel": "Check price (affiliate placeholder)"
+          "amazonAsin": "B09Y8T5ZY8",
+          "amazonKeywords": "Samsung T7 Shield 1TB"
         },
         {
           "id": "ssd-premium",
-          "name": "TideVault 4TB Heatsink",
-          "brand": "Placeholder Brand",
+          "name": "Seagate FireCuda 530 4TB Heatsink",
+          "brand": "Seagate",
           "pick": "best-premium",
-          "price": "$329",
-          "priceNote": "placeholder",
-          "summary": "Headroom for a full console library plus capture projects.",
+          "price": "$349",
+          "priceNote": "typical street",
+          "summary": "Buy-once capacity for collectors and creators: 4 TB of heatsinked NVMe so you can keep a full console library, large day-one patches, and long capture projects without juggling uninstalls.",
+          "bestFor": "Heavy libraries, capture hobbies, and “never delete again” setups",
+          "pros": [
+            "4 TB headroom for a full modern console library",
+            "Heatsinked variant aimed at console expansion bays",
+            "Rescue Data Recovery plan included on many SKUs"
+          ],
+          "cons": [
+            "Premium price; wait for sales if budget-sensitive",
+            "Physically larger heatsink—confirm bay clearance"
+          ],
           "specs": {
             "capacity": "4 TB",
             "interface": "PCIe 4.0 NVMe",
-            "consoleCompat": "PS5 official expansion slot",
-            "readSpeed": "7,300 MB/s",
-            "formFactor": "M.2 + heatsink"
+            "consoleCompat": "PS5 expansion slot",
+            "readSpeed": "Up to 7,300 MB/s",
+            "formFactor": "M.2 2280 + heatsink",
+            "warranty": "5 years + Rescue"
           },
-          "affiliateUrl": "https://example.com/affiliate/ssd-premium",
-          "affiliateLabel": "Check price (affiliate placeholder)"
+          "amazonAsin": "B09F2712B4",
+          "amazonKeywords": "Seagate FireCuda 530 4TB heatsink"
         }
       ]
     },
     {
       "slug": "headset",
       "name": "Headsets",
-      "tagline": "Hear story dialogue clearly without drowning the mix.",
-      "description": "Console-first headsets ranked for comfort, mic clarity, and dialogue-friendly tuning — useful when you play long story sessions with chat on the side.",
-      "consoleAngle": "Look for 3.5mm / USB-C / wireless dongle support that works on PS5 and Xbox Series without PC software.",
-      "specKeys": ["connection", "mic", "battery", "surround", "weight"],
+      "tagline": "Hear story dialogue and positional cues without drowning the mix.",
+      "description": "Console-first headsets ranked for long-session comfort, mic clarity for party chat, and dialogue-friendly tuning. We prioritize connections that work on PS5 and Xbox Series without PC-only software or proprietary ecosystems you cannot leave.",
+      "consoleAngle": "Confirm 3.5 mm, USB-C, Xbox Wireless, or licensed wireless dongles—many “gaming” headsets still need PC software for EQ and will disappoint on console day one.",
+      "specKeys": ["connection", "mic", "battery", "surround", "weight", "platformNotes"],
       "products": [
         {
           "id": "headset-best",
-          "name": "CoastLine Dual Band",
-          "brand": "Placeholder Brand",
+          "name": "SteelSeries Arctis Nova 7P",
+          "brand": "SteelSeries",
           "pick": "best-overall",
           "price": "$149",
-          "priceNote": "placeholder",
-          "summary": "Wireless comfort with a clear center channel for dialogue.",
+          "priceNote": "typical street",
+          "summary": "Wireless comfort with a clear center image for dialogue-heavy story games and a flip-to-mute boom that works in party chat. Dual wireless (2.4 GHz + Bluetooth) means you can take a call without yanking the dongle out of the DualSense.",
+          "bestFor": "PS5 story sessions with occasional party chat",
+          "pros": [
+            "Lightweight for multi-hour campaigns",
+            "2.4 GHz + Bluetooth dual link",
+            "Flip-to-mute boom and solid battery life"
+          ],
+          "cons": [
+            "Xbox needs the Xbox-specific Nova variant",
+            "App EQ is nicer on PC than on console"
+          ],
           "specs": {
             "connection": "2.4 GHz + Bluetooth",
-            "mic": "Flip-to-mute boom",
-            "battery": "30 hours",
-            "surround": "Virtual 7.1 (console)",
-            "weight": "285 g"
+            "mic": "Retractable boom, flip-to-mute",
+            "battery": "Up to 38 hours",
+            "surround": "Tempest 3D Audio ready",
+            "weight": "~245 g",
+            "platformNotes": "Nova 7P for PlayStation; use 7X on Xbox"
           },
-          "affiliateUrl": "https://example.com/affiliate/headset-best",
-          "affiliateLabel": "Check price (affiliate placeholder)"
+          "amazonAsin": "B0B6XRZQ9Y",
+          "amazonKeywords": "SteelSeries Arctis Nova 7P"
         },
         {
           "id": "headset-budget",
-          "name": "PierWire Lite",
-          "brand": "Placeholder Brand",
+          "name": "HyperX Cloud Stinger 2",
+          "brand": "HyperX",
           "pick": "best-budget",
           "price": "$49",
-          "priceNote": "placeholder",
-          "summary": "Wired reliability for story nights — no battery anxiety.",
+          "priceNote": "typical street",
+          "summary": "Wired reliability for story nights: no battery anxiety, a usable boom mic, and soft enough pads for a long campaign. The 3.5 mm jack works with DualSense, Xbox controllers, and most TV headphone outs.",
+          "bestFor": "Budget console players who want simple and durable",
+          "pros": [
+            "Works on any console with a 3.5 mm jack",
+            "No batteries or dongles to lose",
+            "Swappable ear cushions extend lifespan"
+          ],
+          "cons": [
+            "Stereo only—no wireless freedom",
+            "Mic is fine for chat, not streaming"
+          ],
           "specs": {
-            "connection": "3.5 mm",
-            "mic": "Inline + boom",
+            "connection": "3.5 mm wired",
+            "mic": "Rotating boom",
             "battery": "N/A (wired)",
             "surround": "Stereo",
-            "weight": "240 g"
+            "weight": "~275 g",
+            "platformNotes": "Controller jack on PS5 / Xbox / Switch"
           },
-          "affiliateUrl": "https://example.com/affiliate/headset-budget",
-          "affiliateLabel": "Check price (affiliate placeholder)"
+          "amazonAsin": "B0B7CQ1K9F",
+          "amazonKeywords": "HyperX Cloud Stinger 2"
         },
         {
           "id": "headset-premium",
-          "name": "NeonReef Pro ANC",
-          "brand": "Placeholder Brand",
+          "name": "Sony INZONE H9",
+          "brand": "Sony",
           "pick": "best-premium",
-          "price": "$249",
-          "priceNote": "placeholder",
-          "summary": "Premium pads and ANC for immersion without blasting volume.",
+          "price": "$279",
+          "priceNote": "typical street",
+          "summary": "Premium pads and active noise canceling for immersion without blasting volume—especially useful in noisy apartments when you still want to catch quiet story beats. Spatial audio tuning and a broadcast-leaning mic round out a high-end PS5-friendly kit.",
+          "bestFor": "Immersion-first PS5 players in noisy rooms",
+          "pros": [
+            "ANC helps keep volumes reasonable",
+            "Plush pads for marathon sessions",
+            "Strong spatial audio story experience"
+          ],
+          "cons": [
+            "Pricey; ANC is less useful on quiet couches",
+            "Xbox support is more limited than PS5"
+          ],
           "specs": {
-            "connection": "2.4 GHz + USB-C",
-            "mic": "Broadcast-grade boom",
-            "battery": "40 hours",
-            "surround": "Spatial audio ready",
-            "weight": "310 g"
+            "connection": "2.4 GHz USB + Bluetooth",
+            "mic": "AI noise-reducing boom",
+            "battery": "Up to 32 hours (ANC on)",
+            "surround": "360 Spatial Sound for Gaming",
+            "weight": "~300 g",
+            "platformNotes": "Best on PS5 / PC; limited Xbox wireless"
           },
-          "affiliateUrl": "https://example.com/affiliate/headset-premium",
-          "affiliateLabel": "Check price (affiliate placeholder)"
+          "amazonAsin": "B09Y8T8YQK",
+          "amazonKeywords": "Sony INZONE H9"
         }
       ]
     },
     {
       "slug": "tv-monitor",
       "name": "TVs & Monitors",
-      "tagline": "Display picks tuned for console HDMI, VRR, and HDR.",
-      "description": "Side-by-side TVs and monitors that make sense for couch or desk console play — ALLM, VRR, and HDR without chasing PC-only features.",
-      "consoleAngle": "Prioritize HDMI 2.1 features your PS5 or Xbox Series can actually use.",
-      "specKeys": ["size", "refresh", "hdmi", "hdr", "vrr"],
+      "tagline": "Display picks tuned for console HDMI 2.1, VRR, and HDR story nights.",
+      "description": "Side-by-side TVs and monitors that make sense for couch or desk console play. We prioritize ALLM, VRR, 4K120 where it matters, and HDR that still looks good in a normal living room—without chasing PC-only features your console cannot use.",
+      "consoleAngle": "PS5 and Xbox Series shine on HDMI 2.1 ports with VRR and ALLM. A 120 Hz panel only helps if the console and the game mode path actually deliver it.",
+      "specKeys": ["size", "panel", "refresh", "hdmi", "hdr", "vrr"],
       "products": [
         {
           "id": "display-best",
-          "name": "Horizon 55 OLED C-Series",
-          "brand": "Placeholder Brand",
+          "name": "LG C4 55\" OLED evo",
+          "brand": "LG",
           "pick": "best-overall",
           "price": "$999",
-          "priceNote": "placeholder",
-          "summary": "Living-room OLED with the console feature set that matters.",
+          "priceNote": "typical street",
+          "summary": "The living-room default for console story games: perfect blacks, four full-bandwidth HDMI 2.1 ports, and a Game Optimizer path that enables VRR and ALLM without menu spelunking. 55\" fits most apartments without dominating the wall.",
+          "bestFor": "Couch PS5 / Xbox play in a light-controlled room",
+          "pros": [
+            "Four HDMI 2.1 ports for console + soundbar + more",
+            "Excellent contrast for cinematic single-player",
+            "Mature game mode with VRR / ALLM"
+          ],
+          "cons": [
+            "Brightness limited in bright daytime rooms",
+            "Burn-in risk if you leave static HUDs for years"
+          ],
           "specs": {
             "size": "55\"",
-            "refresh": "120 Hz",
+            "panel": "OLED evo",
+            "refresh": "120 Hz (4K)",
             "hdmi": "HDMI 2.1 ×4",
             "hdr": "Dolby Vision / HDR10",
-            "vrr": "ALLM + VRR"
+            "vrr": "ALLM + VRR + 4K120"
           },
-          "affiliateUrl": "https://example.com/affiliate/display-best",
-          "affiliateLabel": "Check price (affiliate placeholder)"
+          "amazonAsin": "B0CV48Z9N3",
+          "amazonKeywords": "LG C4 55 OLED"
         },
         {
           "id": "display-budget",
-          "name": "BayView 27 1440p",
-          "brand": "Placeholder Brand",
+          "name": "LG UltraGear 27GR75Q-B 27\"",
+          "brand": "LG",
           "pick": "best-budget",
           "price": "$229",
-          "priceNote": "placeholder",
-          "summary": "Desk-friendly monitor for sharper HUD text on a budget.",
+          "priceNote": "typical street",
+          "summary": "Desk-friendly 1440p monitor for sharper HUD text and competitive clarity on a budget. HDMI 2.0 caps pure 4K120 dreams, but console VRR support and a fast IPS panel make it a strong “bedroom / office console” pick.",
+          "bestFor": "Desk or dorm setups where 27\" beats a huge TV",
+          "pros": [
+            "Sharp 1440p text and HUDs",
+            "High refresh for smoother camera pans",
+            "Console VRR via Adaptive-Sync path"
+          ],
+          "cons": [
+            "Not a 4K living-room TV replacement",
+            "HDR is modest compared with OLED TVs"
+          ],
           "specs": {
             "size": "27\"",
-            "refresh": "144 Hz",
+            "panel": "IPS",
+            "refresh": "165 Hz",
             "hdmi": "HDMI 2.0",
             "hdr": "HDR10",
-            "vrr": "FreeSync (console VRR)"
+            "vrr": "FreeSync / console VRR"
           },
-          "affiliateUrl": "https://example.com/affiliate/display-budget",
-          "affiliateLabel": "Check price (affiliate placeholder)"
+          "amazonAsin": "B0B1YZ1C8K",
+          "amazonKeywords": "LG UltraGear 27GR75Q-B"
         },
         {
           "id": "display-premium",
-          "name": "Marina Mini-LED 65",
-          "brand": "Placeholder Brand",
+          "name": "Samsung QN90D 65\" Neo QLED",
+          "brand": "Samsung",
           "pick": "best-premium",
           "price": "$1,799",
-          "priceNote": "placeholder",
-          "summary": "Bright HDR for daytime rooms where OLEDs can struggle.",
+          "priceNote": "typical street",
+          "summary": "Bright Mini-LED punch for daytime rooms where OLEDs can look washed out. Full console gaming feature set with 4K120 and VRR, plus a larger canvas for couch co-op and cinematic set pieces.",
+          "bestFor": "Bright living rooms that still want 4K120 gaming",
+          "pros": [
+            "Excellent peak brightness for sunny rooms",
+            "65\" shared-view size for couch sessions",
+            "Strong 4K120 + VRR console support"
+          ],
+          "cons": [
+            "Contrast can’t match OLED in dark rooms",
+            "Premium pricing—shop holiday sales"
+          ],
           "specs": {
             "size": "65\"",
-            "refresh": "144 Hz",
+            "panel": "Neo QLED Mini-LED",
+            "refresh": "144 Hz (4K)",
             "hdmi": "HDMI 2.1 ×4",
-            "hdr": "HDR10+ / Dolby Vision",
+            "hdr": "HDR10+ / HDR10",
             "vrr": "ALLM + VRR + 4K120"
           },
-          "affiliateUrl": "https://example.com/affiliate/display-premium",
-          "affiliateLabel": "Check price (affiliate placeholder)"
+          "amazonAsin": "B0D1YQK8ZR",
+          "amazonKeywords": "Samsung QN90D 65"
         }
       ]
     },
     {
       "slug": "capture-card",
       "name": "Capture Cards",
-      "tagline": "Record and stream console footage without a PC gaming rig.",
-      "description": "Capture cards for creators who play on console and need clean HDMI pass-through to a streaming PC or laptop.",
-      "consoleAngle": "Works with PS5 / Xbox Series HDMI out — no mods, no unofficial clients.",
-      "specKeys": ["passthrough", "capture", "interface", "hdr", "formFactor"],
+      "tagline": "Record and stream console footage without turning your living room into a PC LAN.",
+      "description": "Capture cards for creators who play on console and need clean HDMI pass-through to a streaming PC or laptop. We rank for latency, HDR pass-through honesty, and USB convenience—no unofficial firmware, no console mods.",
+      "consoleAngle": "PS5 and Xbox Series both output HDMI; you need a card that can pass 4K60 HDR to the TV while capturing a usable stream resolution to the PC.",
+      "specKeys": ["passthrough", "capture", "interface", "hdr", "formFactor", "latency"],
       "products": [
         {
           "id": "capture-best",
-          "name": "SignalBay Dual",
-          "brand": "Placeholder Brand",
+          "name": "Elgato HD60 X",
+          "brand": "Elgato",
           "pick": "best-overall",
           "price": "$169",
-          "priceNote": "placeholder",
-          "summary": "Reliable 4K60 pass-through with 1080p60 capture for most creators.",
+          "priceNote": "typical street",
+          "summary": "The creator default: reliable 4K60 HDR pass-through with 1080p60 (VRR-aware) capture over USB-C. Works with PS5 and Xbox Series without weird adapters, and pairs cleanly with OBS / Stream Deck workflows.",
+          "bestFor": "Most console streamers and highlight editors",
+          "pros": [
+            "Solid 4K60 HDR pass-through to your TV",
+            "USB-C convenience—no PCIe slot required",
+            "Mature Elgato software + OBS support"
+          ],
+          "cons": [
+            "Native capture tops out below 4K60",
+            "Needs a capable USB port and CPU for encoding"
+          ],
           "specs": {
             "passthrough": "4K60 HDR",
-            "capture": "1080p60",
+            "capture": "1080p60 / 1440p60 / 4K30",
             "interface": "USB-C",
             "hdr": "Pass-through yes",
-            "formFactor": "Compact USB"
+            "formFactor": "Compact USB",
+            "latency": "Ultra-low (instant gameview)"
           },
-          "affiliateUrl": "https://example.com/affiliate/capture-best",
-          "affiliateLabel": "Check price (affiliate placeholder)"
+          "amazonAsin": "B09J4Y9THQ",
+          "amazonKeywords": "Elgato HD60 X"
         },
         {
           "id": "capture-budget",
-          "name": "ClipDock Entry",
-          "brand": "Placeholder Brand",
+          "name": "AverMedia Live Gamer Mini",
+          "brand": "AverMedia",
           "pick": "best-budget",
           "price": "$69",
-          "priceNote": "placeholder",
-          "summary": "Simple 1080p capture for highlight reels and Discord clips.",
+          "priceNote": "typical street",
+          "summary": "Simple 1080p capture for Discord clips, TikTok highlights, and learning OBS without spending creator-tax money. Fine for SDR console footage when you do not need 4K HDR pass-through.",
+          "bestFor": "First-time clip creators on a tight budget",
+          "pros": [
+            "Affordable entry into console capture",
+            "USB stick form factor travels easily",
+            "Works for basic 1080p highlight reels"
+          ],
+          "cons": [
+            "No premium HDR / 4K60 pass-through path",
+            "Capture limited versus HD60-class cards"
+          ],
           "specs": {
             "passthrough": "1080p60",
-            "capture": "1080p30",
-            "interface": "USB 3.0",
-            "hdr": "SDR only",
-            "formFactor": "USB stick"
+            "capture": "1080p60",
+            "interface": "USB 2.0 / 3.0",
+            "hdr": "SDR focused",
+            "formFactor": "USB stick",
+            "latency": "Low (USB UVC)"
           },
-          "affiliateUrl": "https://example.com/affiliate/capture-budget",
-          "affiliateLabel": "Check price (affiliate placeholder)"
+          "amazonAsin": "B07Y2K7W2N",
+          "amazonKeywords": "AverMedia Live Gamer Mini"
         },
         {
           "id": "capture-premium",
-          "name": "NeonPass Internal PCIe",
-          "brand": "Placeholder Brand",
+          "name": "Elgato 4K60 Pro MK.2",
+          "brand": "Elgato",
           "pick": "best-premium",
           "price": "$249",
-          "priceNote": "placeholder",
-          "summary": "Low-latency internal capture when you already have a desktop.",
+          "priceNote": "typical street",
+          "summary": "Internal PCIe capture when you already have a desktop and want the cleanest 4K60 path with lower USB overhead. Best for serious console creators who edit in 4K and keep a dedicated streaming PC under the desk.",
+          "bestFor": "Desktop streaming PCs capturing console 4K60",
+          "pros": [
+            "True 4K60 capture for high-end workflows",
+            "PCIe reduces USB bandwidth drama",
+            "HDR-capable capture path"
+          ],
+          "cons": [
+            "Requires a desktop with a free PCIe slot",
+            "Overkill for casual Discord clips"
+          ],
           "specs": {
             "passthrough": "4K60 HDR",
             "capture": "4K60",
             "interface": "PCIe",
             "hdr": "HDR capture capable",
-            "formFactor": "Internal card"
+            "formFactor": "Internal card",
+            "latency": "Ultra-low"
           },
-          "affiliateUrl": "https://example.com/affiliate/capture-premium",
-          "affiliateLabel": "Check price (affiliate placeholder)"
+          "amazonAsin": "B07XS3V8K2",
+          "amazonKeywords": "Elgato 4K60 Pro MK.2"
         }
       ]
     }
