@@ -127,12 +127,12 @@ const posts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "When you are ready to compare specific picks, use our side-by-side SSD category—best overall, budget external, and premium capacity—with Amazon links tagged through our Associates ID when AMAZON_TAG is configured.",
+        text: "When you are ready to compare specific picks, use our side-by-side SSD category—best overall, budget, and premium capacity—with clear Amazon price links and affiliate disclosure.",
       },
     ],
     cta: {
       headline: "Compare console SSD picks",
-      body: "Three heatsink-ready and portable options sized for large story installs, with tagged Amazon price checks.",
+      body: "Three heatsink-ready and portable options sized for large story installs, with Amazon price checks.",
       categorySlug: "ssd",
       categoryLabel: "Open SSD comparisons",
       amazonKeywords: "WD BLACK SN850X 2TB heatsink",
@@ -221,12 +221,12 @@ const posts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Our headset category ranks overall, budget, and premium picks with console connection notes and Amazon price links wired through AMAZON_TAG.",
+        text: "Our headset category ranks overall, budget, and premium picks with console connection notes and Amazon price links.",
       },
     ],
     cta: {
       headline: "Compare dialogue-friendly headsets",
-      body: "See overall, budget, and premium console headsets with connection notes and tagged Amazon CTAs.",
+      body: "See overall, budget, and premium console headsets with connection notes and Amazon price checks.",
       categorySlug: "headset",
       categoryLabel: "Open headset comparisons",
       amazonKeywords: "SteelSeries Arctis Nova 7X Wireless Gen 2",
@@ -311,7 +311,7 @@ const posts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Compare our TV and monitor picks for console HDMI feature sets, with Amazon links that pick up your Associates tag via AMAZON_TAG.",
+        text: "Compare our TV and monitor picks for console HDMI feature sets, with Amazon price links beside each recommendation.",
       },
     ],
     cta: {
@@ -409,12 +409,12 @@ const posts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Browse our capture card comparisons for passthrough-oriented picks, with Amazon CTAs that respect the site AMAZON_TAG configuration.",
+        text: "Browse our capture card comparisons for passthrough-oriented picks and Amazon price links for each recommendation.",
       },
     ],
     cta: {
       headline: "Compare capture cards",
-      body: "Passthrough, latency, and capture-mode notes for console creators—plus tagged Amazon price checks.",
+      body: "Passthrough, latency, and capture-mode notes for console creators—plus Amazon price checks.",
       categorySlug: "capture-card",
       categoryLabel: "Open capture card comparisons",
       amazonKeywords: "Elgato Game Capture 4K S",
@@ -513,12 +513,12 @@ const posts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "When you want curated hardware options instead of browsing endless SKUs, use our SSD comparisons—the same affiliate wiring powers the Amazon CTAs via AMAZON_TAG.",
+        text: "When you want curated hardware options instead of browsing endless SKUs, use our SSD comparisons for best overall, budget, and premium capacity picks.",
       },
     ],
     cta: {
       headline: "Shop storage upgrades with clear picks",
-      body: "Best overall, budget external, and premium capacity—compared for PS5 and Xbox Series.",
+      body: "Best overall, budget, and premium capacity—compared for PS5 and Xbox Series.",
       categorySlug: "ssd",
       categoryLabel: "Open SSD comparisons",
       amazonKeywords: "Crucial T500 2TB heatsink PS5",
