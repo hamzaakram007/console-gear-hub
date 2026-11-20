@@ -22,7 +22,7 @@ export function SiteHeader() {
 
         <nav
           className="hidden items-center gap-1 lg:flex"
-          aria-label="Categories"
+          aria-label="Primary"
         >
           {navCategories.map((cat) => (
             <Link
@@ -33,6 +33,12 @@ export function SiteHeader() {
               {cat.name}
             </Link>
           ))}
+          <Link
+            href="/blog"
+            className="rounded-md px-3 py-1.5 text-sm text-teal-100/75 transition hover:bg-cyan-400/10 hover:text-cyan-100"
+          >
+            Blog
+          </Link>
         </nav>
 
         <button
@@ -50,7 +56,7 @@ export function SiteHeader() {
         <nav
           id="mobile-nav"
           className="border-t border-cyan-400/10 bg-[rgba(4,18,28,0.98)] px-4 py-3 lg:hidden"
-          aria-label="Mobile categories"
+          aria-label="Mobile navigation"
         >
           <ul className="grid gap-1">
             <li>
@@ -76,6 +82,18 @@ export function SiteHeader() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/blog"
+                className="block rounded-md px-3 py-3 text-sm text-teal-100/80 transition hover:bg-cyan-400/10 hover:text-cyan-100"
+                onClick={() => setOpen(false)}
+              >
+                Blog
+                <span className="mt-0.5 block text-xs text-teal-100/45">
+                  Storage, audio, display, and capture guides
+                </span>
+              </Link>
+            </li>
           </ul>
         </nav>
       ) : null}

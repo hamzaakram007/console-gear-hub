@@ -54,6 +54,12 @@ export default function Home() {
             >
               Start with SSDs
             </Link>
+            <Link
+              href="/blog"
+              className="inline-flex min-h-11 items-center rounded-md border border-teal-300/25 px-5 py-2.5 text-sm font-medium text-teal-100/80 transition hover:border-teal-300/45 hover:text-teal-50"
+            >
+              Read the blog
+            </Link>
           </div>
           <div className="animate-fade-up-delay-2 mt-6 max-w-xl">
             <AffiliateDisclosure variant="inline" />

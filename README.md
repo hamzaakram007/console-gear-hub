@@ -10,6 +10,7 @@ Console gear comparison site for **PS5** and **Xbox Series**: SSD storage, heads
 
 - Next.js (App Router) + TypeScript + Tailwind CSS
 - Product catalog: `src/data/products.json`
+- Blog posts: `src/lib/posts.ts` (affiliate CTAs via `AMAZON_TAG`)
 - Affiliate URLs: `src/lib/affiliate.ts` (reads `AMAZON_TAG`)
 - Deploy target: Vercel (`team_F6KmHT8xzv90muVN0aGMdgbc`)
 
@@ -18,6 +19,8 @@ Console gear comparison site for **PS5** and **Xbox Series**: SSD storage, heads
 | Route | What it does |
 | --- | --- |
 | `/` | Landing — brand hero + category list |
+| `/blog` | Editorial guides index |
+| `/blog/[slug]` | SEO guides (SSD, headset, display, capture, checklist) |
 | `/category/ssd` | SSD storage picks + comparison |
 | `/category/headset` | Headset picks + comparison |
 | `/category/tv-monitor` | TV/monitor picks + comparison |

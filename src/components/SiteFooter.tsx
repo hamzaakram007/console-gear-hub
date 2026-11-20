@@ -19,7 +19,7 @@ export function SiteFooter() {
           </div>
           <div className="sm:text-right">
             <p className="text-xs font-medium uppercase tracking-wider text-teal-200/50">
-              Categories
+              Explore
             </p>
             <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-2 sm:justify-end">
               {navCategories.map((cat) => (
@@ -32,6 +32,14 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/blog"
+                  className="inline-flex min-h-10 items-center text-sm text-teal-100/70 transition hover:text-cyan-200"
+                >
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
