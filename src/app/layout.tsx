@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, DM_Sans } from "next/font/google";
+import { Syne, Figtree } from "next/font/google";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -12,14 +12,14 @@ import {
 } from "@/lib/site";
 import "./globals.css";
 
-const display = Fraunces({
+const display = Syne({
   variable: "--font-display",
   subsets: ["latin"],
-  axes: ["SOFT", "WONK", "opsz"],
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
-const body = DM_Sans({
+const body = Figtree({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#04121c",
+  themeColor: "#e9f2f5",
   width: "device-width",
   initialScale: 1,
 };
@@ -114,7 +114,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col font-sans text-foreground">
+      <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

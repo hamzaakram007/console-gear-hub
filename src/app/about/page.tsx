@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
-import { absoluteUrl, SITE_NAME } from "@/lib/site";
+import { absoluteUrl, BRAND_NAME, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About NeonGulf Console Gear Hub",
@@ -37,7 +37,7 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="hero-wash relative">
+    <div className="page-wash relative">
       <div className="noise-overlay absolute inset-0" aria-hidden />
       <script
         type="application/ld+json"
@@ -45,30 +45,33 @@ export default function AboutPage() {
       />
 
       <article className="relative mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-16">
-        <nav className="text-sm text-teal-100/50" aria-label="Breadcrumb">
-          <Link href="/" className="transition hover:text-cyan-200">
+        <nav className="text-sm text-muted-soft" aria-label="Breadcrumb">
+          <Link href="/" className="transition hover:text-gulf">
             Home
           </Link>
           <span className="mx-2 opacity-40">/</span>
-          <span className="text-teal-100/80">About</span>
+          <span className="text-ink">About</span>
         </nav>
 
         <header className="mt-6">
-          <h1 className="font-[family-name:var(--font-display)] text-3xl leading-tight text-cyan-50 sm:text-5xl">
+          <p className="font-display text-sm font-bold uppercase tracking-[0.16em] text-gulf">
+            {BRAND_NAME}
+          </p>
+          <h1 className="mt-2 font-display text-3xl font-extrabold leading-tight text-ink sm:text-5xl">
             About Console Gear Hub
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-teal-100/70 sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
             Console Gear Hub is a NeonGulf editorial site for players who want
             clear, console-first gear advice—not PC mod shop marketing recycled
             for living-room setups.
           </p>
         </header>
 
-        <div className="prose-gear mt-10 space-y-6 text-sm leading-relaxed text-teal-100/70 sm:text-base">
+        <div className="mt-10 space-y-6 text-sm leading-relaxed text-muted sm:text-base">
           <section aria-labelledby="what-we-do">
             <h2
               id="what-we-do"
-              className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+              className="font-display text-2xl font-bold text-ink"
             >
               What we do
             </h2>
@@ -80,7 +83,10 @@ export default function AboutPage() {
             </p>
             <p className="mt-3">
               The{" "}
-              <Link href="/blog" className="text-cyan-200 underline-offset-2 hover:underline">
+              <Link
+                href="/blog"
+                className="font-semibold text-gulf underline-offset-2 hover:underline"
+              >
                 blog
               </Link>{" "}
               adds practical setup and buying guides that link back to those
@@ -91,7 +97,7 @@ export default function AboutPage() {
           <section aria-labelledby="how-we-pick">
             <h2
               id="how-we-pick"
-              className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+              className="font-display text-2xl font-bold text-ink"
             >
               How we pick
             </h2>
@@ -107,7 +113,7 @@ export default function AboutPage() {
           <section aria-labelledby="affiliate">
             <h2
               id="affiliate"
-              className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+              className="font-display text-2xl font-bold text-ink"
             >
               Affiliate relationships
             </h2>
@@ -125,7 +131,7 @@ export default function AboutPage() {
           <section aria-labelledby="independence">
             <h2
               id="independence"
-              className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+              className="font-display text-2xl font-bold text-ink"
             >
               Independence
             </h2>
@@ -137,23 +143,24 @@ export default function AboutPage() {
           </section>
         </div>
 
+        <div className="mt-10 flex flex-wrap gap-3">
+          <Link href="/category/ssd" className="btn-buy">
+            Shop SSD picks on Amazon
+          </Link>
+          <Link href="/#categories" className="btn-secondary">
+            Browse categories
+          </Link>
+        </div>
+
         <nav
-          className="mt-12 border-t border-cyan-400/15 pt-8"
+          className="mt-12 border-t border-edge pt-8"
           aria-label="Related pages"
         >
           <ul className="flex flex-wrap gap-4 text-sm">
             <li>
               <Link
-                href="/#categories"
-                className="text-cyan-300/85 transition hover:text-cyan-200"
-              >
-                Browse categories →
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="/blog"
-                className="text-cyan-300/85 transition hover:text-cyan-200"
+                className="font-semibold text-gulf transition hover:text-ink"
               >
                 Read the blog →
               </Link>
@@ -161,7 +168,7 @@ export default function AboutPage() {
             <li>
               <Link
                 href="/privacy"
-                className="text-cyan-300/85 transition hover:text-cyan-200"
+                className="font-semibold text-gulf transition hover:text-ink"
               >
                 Privacy →
               </Link>

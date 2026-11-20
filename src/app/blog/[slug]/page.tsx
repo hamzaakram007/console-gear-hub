@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   };
 
   return (
-    <div className="hero-wash relative">
+    <div className="page-wash relative">
       <div className="noise-overlay absolute inset-0" aria-hidden />
       <script
         type="application/ld+json"
@@ -95,20 +95,20 @@ export default async function BlogPostPage({ params }: PageProps) {
       />
 
       <article className="relative mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
-        <nav className="text-sm text-teal-100/50" aria-label="Breadcrumb">
-          <Link href="/" className="transition hover:text-cyan-200">
+        <nav className="text-sm text-muted-soft" aria-label="Breadcrumb">
+          <Link href="/" className="transition hover:text-gulf">
             Home
           </Link>
           <span className="mx-2 opacity-40">/</span>
-          <Link href="/blog" className="transition hover:text-cyan-200">
+          <Link href="/blog" className="transition hover:text-gulf">
             Blog
           </Link>
           <span className="mx-2 opacity-40">/</span>
-          <span className="text-teal-100/80">{post.title}</span>
+          <span className="text-ink">{post.title}</span>
         </nav>
 
         <header className="mt-6 max-w-3xl">
-          <p className="text-xs font-medium uppercase tracking-wider text-teal-200/45">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-soft">
             <time dateTime={post.publishedAt}>
               {formatPostDate(post.publishedAt)}
             </time>
@@ -123,17 +123,17 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </span>
                 <Link
                   href={`/category/${category.slug}`}
-                  className="transition hover:text-cyan-200"
+                  className="transition hover:text-gulf"
                 >
                   {category.name}
                 </Link>
               </>
             ) : null}
           </p>
-          <h1 className="mt-3 font-[family-name:var(--font-display)] text-3xl leading-tight text-cyan-50 sm:text-5xl">
+          <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight text-ink sm:text-5xl">
             {post.title}
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-teal-100/70 sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
             {post.description}
           </p>
         </header>
@@ -143,27 +143,33 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {category ? (
           <aside
-            className="mt-12 rounded-md border border-cyan-400/15 bg-cyan-950/30 px-4 py-4"
+            className="mt-12 border border-edge bg-surface-raised px-4 py-4"
             aria-label="Related comparison"
           >
-            <p className="text-xs font-medium uppercase tracking-wider text-teal-200/45">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-soft">
               Related comparison
             </p>
             <Link
               href={`/category/${category.slug}`}
-              className="mt-2 inline-flex font-[family-name:var(--font-display)] text-xl text-cyan-100 transition hover:text-cyan-50"
+              className="mt-2 inline-flex font-display text-xl font-bold text-ink transition hover:text-gulf"
             >
               {category.name} picks →
             </Link>
-            <p className="mt-1 text-sm text-teal-100/55">{category.tagline}</p>
+            <p className="mt-1 text-sm text-muted">{category.tagline}</p>
+            <Link
+              href={`/category/${category.slug}`}
+              className="btn-buy mt-4 !min-h-10 !text-sm"
+            >
+              Compare &amp; buy on Amazon
+            </Link>
           </aside>
         ) : null}
 
         <nav
-          className="mt-16 border-t border-cyan-400/15 pt-8"
+          className="mt-16 border-t border-edge pt-8"
           aria-label="More guides"
         >
-          <p className="text-xs font-medium uppercase tracking-wider text-teal-200/45">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-soft">
             More guides
           </p>
           <ul className="mt-3 grid gap-4 sm:grid-cols-3">
@@ -171,7 +177,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               <li key={item.slug}>
                 <Link
                   href={`/blog/${item.slug}`}
-                  className="block rounded-md border border-cyan-400/15 px-3 py-3 text-sm text-teal-100/75 transition hover:border-cyan-300/40 hover:text-cyan-100"
+                  className="block border border-edge bg-surface-raised px-3 py-3 text-sm text-muted transition hover:border-gulf hover:text-ink"
                 >
                   {item.title}
                 </Link>
@@ -180,7 +186,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </ul>
           <Link
             href="/blog"
-            className="mt-6 inline-flex min-h-10 items-center text-sm text-cyan-300/85 transition hover:text-cyan-200"
+            className="mt-6 inline-flex min-h-10 items-center text-sm font-semibold text-gulf transition hover:text-ink"
           >
             ← All blog posts
           </Link>

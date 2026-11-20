@@ -1,17 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  --background: #04121c;
-  --foreground: #d8f4f0;
-  --accent: #2dd4bf;
-  --accent-warm: #f0b429;
-  --surface: #0a1f2c;
-  --glow: rgba(45, 212, 191, 0.12);
+  /* Daylit gulf — cool light atmosphere, neon mint CTA, deep ink */
+  --background: #e9f2f5;
+  --foreground: #0b1c2c;
+  --surface: #f7fbfd;
+  --surface-raised: #ffffff;
+  --ink: #0b1c2c;
+  --muted: #4a6572;
+  --muted-soft: #6b8490;
+  --edge: rgba(11, 28, 44, 0.12);
+  --edge-strong: rgba(11, 28, 44, 0.22);
+  --neon: #00a88a;
+  --neon-ink: #04352c;
+  --neon-soft: rgba(0, 168, 138, 0.14);
+  --gulf: #1a6f8f;
+  --gulf-soft: #d2e8f0;
+  --trust: #0f766e;
+  --warn: #9a6700;
+  --glow: transparent;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-muted-soft: var(--muted-soft);
+  --color-edge: var(--edge);
+  --color-edge-strong: var(--edge-strong);
+  --color-neon: var(--neon);
+  --color-neon-ink: var(--neon-ink);
+  --color-neon-soft: var(--neon-soft);
+  --color-gulf: var(--gulf);
+  --color-gulf-soft: var(--gulf-soft);
+  --color-trust: var(--trust);
+  --color-warn: var(--warn);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
 }
@@ -19,22 +45,22 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body), system-ui, sans-serif;
+  font-family: var(--font-body), "Figtree", sans-serif;
 }
 
 ::selection {
-  background: rgba(45, 212, 191, 0.35);
-  color: #ecfeff;
+  background: rgba(0, 168, 138, 0.28);
+  color: var(--ink);
 }
 
 @keyframes drift {
   0%,
   100% {
-    transform: translateY(0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
     opacity: 0.55;
   }
   50% {
-    transform: translateY(-12px) scale(1.04);
+    transform: translate3d(0, -10px, 0) scale(1.03);
     opacity: 0.85;
   }
 }
@@ -42,7 +68,7 @@ body {
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -50,39 +76,119 @@ body {
   }
 }
 
+@keyframes tide {
+  0%,
+  100% {
+    background-position: 0% 40%, 100% 60%, 50% 0%;
+  }
+  50% {
+    background-position: 8% 45%, 92% 55%, 48% 5%;
+  }
+}
+
 .animate-drift {
-  animation: drift 9s ease-in-out infinite;
+  animation: drift 10s ease-in-out infinite;
 }
 
 .animate-fade-up {
-  animation: fade-up 0.7s ease-out both;
+  animation: fade-up 0.65s ease-out both;
 }
 
 .animate-fade-up-delay {
-  animation: fade-up 0.7s ease-out 0.15s both;
+  animation: fade-up 0.65s ease-out 0.12s both;
 }
 
 .animate-fade-up-delay-2 {
-  animation: fade-up 0.7s ease-out 0.3s both;
+  animation: fade-up 0.65s ease-out 0.24s both;
 }
 
 .hero-wash {
   background:
-    radial-gradient(ellipse 80% 55% at 50% -10%, rgba(34, 211, 238, 0.22), transparent 55%),
-    radial-gradient(ellipse 50% 40% at 90% 20%, rgba(20, 184, 166, 0.14), transparent 50%),
-    radial-gradient(ellipse 45% 35% at 10% 60%, rgba(251, 191, 36, 0.06), transparent 45%),
-    linear-gradient(180deg, #031018 0%, #04121c 40%, #061a24 100%);
+    radial-gradient(ellipse 85% 55% at 78% -5%, rgba(0, 168, 138, 0.2), transparent 58%),
+    radial-gradient(ellipse 55% 45% at 8% 35%, rgba(26, 111, 143, 0.16), transparent 52%),
+    radial-gradient(ellipse 40% 30% at 55% 85%, rgba(210, 232, 240, 0.9), transparent 60%),
+    linear-gradient(180deg, #d5eaf1 0%, #e9f2f5 42%, #f3f8fa 100%);
+  background-size: 120% 120%, 120% 120%, 100% 100%, 100% 100%;
+  animation: tide 18s ease-in-out infinite;
+}
+
+.page-wash {
+  background:
+    radial-gradient(ellipse 70% 40% at 90% 0%, rgba(0, 168, 138, 0.1), transparent 55%),
+    radial-gradient(ellipse 50% 35% at 0% 20%, rgba(26, 111, 143, 0.08), transparent 50%),
+    linear-gradient(180deg, #e4eff3 0%, #eef4f6 100%);
 }
 
 .noise-overlay {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
-  opacity: 0.04;
+  opacity: 0.035;
   pointer-events: none;
+}
+
+.font-display {
+  font-family: var(--font-display), "Syne", sans-serif;
+}
+
+.btn-buy {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4rem;
+  background: var(--neon);
+  color: #ffffff;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.btn-buy:hover {
+  background: var(--neon-deep, #009978);
+  background: color-mix(in srgb, var(--neon) 88%, #000 12%);
+  transform: translateY(-1px);
+}
+
+.btn-buy:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4rem;
+  border: 1px solid var(--edge-strong);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--ink);
+  padding: 0.65rem 1.15rem;
+  font-size: 0.9375rem;
+  font-weight: 550;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--gulf);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.stock-note {
+  color: var(--warn);
+  font-size: 0.75rem;
+  line-height: 1.45;
 }
 
 .compare-scroll {
   -webkit-overflow-scrolling: touch;
-  scrollbar-color: rgba(45, 212, 191, 0.35) transparent;
+  scrollbar-color: rgba(0, 168, 138, 0.4) transparent;
 }
 
 .compare-scroll::-webkit-scrollbar {
@@ -90,15 +196,20 @@ body {
 }
 
 .compare-scroll::-webkit-scrollbar-thumb {
-  background: rgba(45, 212, 191, 0.35);
-  border-radius: 999px;
+  background: rgba(0, 168, 138, 0.4);
+  border-radius: 4px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-drift,
   .animate-fade-up,
   .animate-fade-up-delay,
-  .animate-fade-up-delay-2 {
+  .animate-fade-up-delay-2,
+  .hero-wash {
     animation: none;
+  }
+
+  .btn-buy:hover {
+    transform: none;
   }
 }

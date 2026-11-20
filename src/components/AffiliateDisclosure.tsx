@@ -2,7 +2,7 @@ type Variant = "banner" | "footer" | "inline";
 
 const copy = {
   banner:
-    "Affiliate disclosure: We may earn a commission from qualifying purchases through links on this site, at no extra cost to you. Prices shown are typical street estimates—always verify on the retailer page.",
+    "Affiliate disclosure: We may earn a commission from qualifying Amazon purchases through links on this site, at no extra cost to you. Always verify live price, stock, and shipping on Amazon.",
   footer:
     "FTC affiliate disclosure: Console Gear Hub participates in the Amazon Associates Program and similar partner programs. When you click an Amazon link and buy something, we may earn a commission. That never changes the price you pay. Always confirm current price, shipping, returns, and seller details on Amazon before purchasing. Recommendations are independent editorial opinions for PS5 and Xbox Series setups. This site is not sponsored, endorsed, or approved by Amazon, Sony, Microsoft, Nintendo, or any manufacturer.",
   inline:
@@ -17,7 +17,7 @@ export function AffiliateDisclosure({
   if (variant === "banner") {
     return (
       <aside
-        className="border-b border-cyan-400/15 bg-[rgba(4,18,28,0.95)] px-4 py-2 text-center text-xs leading-relaxed text-teal-100/70 sm:text-sm"
+        className="border-b border-edge bg-gulf-soft/70 px-4 py-2 text-center text-xs leading-relaxed text-ink/80 sm:text-[0.8125rem]"
         aria-label="Affiliate disclosure"
       >
         {copy.banner}
@@ -27,7 +27,7 @@ export function AffiliateDisclosure({
 
   if (variant === "inline") {
     return (
-      <p className="text-xs leading-relaxed text-teal-100/50" role="note">
+      <p className="text-xs leading-relaxed text-muted-soft" role="note">
         {copy.inline}
       </p>
     );
@@ -35,10 +35,10 @@ export function AffiliateDisclosure({
 
   return (
     <aside
-      className="rounded-lg border border-cyan-400/20 bg-cyan-950/35 px-4 py-4 text-sm leading-relaxed text-teal-100/75"
+      className="border border-edge bg-surface-raised px-4 py-4 text-sm leading-relaxed text-muted"
       aria-label="FTC affiliate disclosure"
     >
-      <p className="text-xs font-semibold uppercase tracking-wider text-cyan-200/80">
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-gulf">
         FTC affiliate disclosure
       </p>
       <p className="mt-2">{copy.footer}</p>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { formatPostDate, getPosts } from "@/lib/posts";
 import { getCategories } from "@/lib/products";
-import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
+import { BRAND_NAME, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -28,55 +28,62 @@ export const metadata: Metadata = {
 export default function Home() {
   const categories = getCategories();
   const latestPosts = getPosts().slice(0, 3);
+  const featured = categories[0];
+  const featuredOverall = featured?.products.find(
+    (p) => p.pick === "best-overall",
+  );
 
   return (
     <>
       <section className="hero-wash relative overflow-hidden">
         <div className="noise-overlay absolute inset-0" aria-hidden />
         <div
-          className="animate-drift absolute -right-16 top-24 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl"
+          className="animate-drift absolute -right-20 top-16 h-[22rem] w-[22rem] rounded-full bg-neon/15 blur-3xl"
           aria-hidden
         />
         <div
-          className="animate-drift absolute -left-10 bottom-10 h-48 w-48 rounded-full bg-teal-500/10 blur-3xl"
-          style={{ animationDelay: "2s" }}
+          className="animate-drift absolute -left-16 bottom-8 h-56 w-56 rounded-full bg-gulf/15 blur-3xl"
+          style={{ animationDelay: "2.2s" }}
           aria-hidden
         />
 
-        <div className="relative mx-auto flex min-h-[min(78vh,52rem)] max-w-6xl flex-col justify-center px-4 py-16 sm:px-6 sm:py-24">
-          <p className="animate-fade-up font-[family-name:var(--font-display)] text-4xl text-cyan-100 sm:text-6xl md:text-7xl">
-            Console Gear Hub
+        {/* Z-pattern: brand → headline → primary Amazon CTA */}
+        <div className="relative mx-auto flex min-h-[min(88vh,54rem)] max-w-6xl flex-col justify-center px-4 py-16 sm:px-6 sm:py-24">
+          <p className="animate-fade-up font-display text-5xl font-extrabold tracking-tight text-ink sm:text-7xl md:text-8xl">
+            {BRAND_NAME}
           </p>
-          <h1 className="animate-fade-up-delay mt-5 max-w-2xl text-xl font-medium leading-snug text-teal-50/90 sm:text-2xl">
-            Pick the right SSD, headset, display, and capture card for console
-            play.
+          <h1 className="animate-fade-up-delay mt-4 max-w-2xl text-xl font-medium leading-snug text-ink/90 sm:text-2xl md:text-3xl">
+            Console gear picks you can buy with confidence.
           </h1>
-          <p className="animate-fade-up-delay-2 mt-4 max-w-xl text-base leading-relaxed text-teal-100/60">
-            Side-by-side tables, three honest picks per category, and Amazon buy
-            links with a clear FTC affiliate disclosure. Built for PS5 and Xbox
-            Series — not a PC mod shop.
+          <p className="animate-fade-up-delay-2 mt-4 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+            Side-by-side SSD, headset, display, and capture comparisons for PS5
+            and Xbox Series—three honest picks each, tagged Amazon buy links,
+            clear disclosure.
           </p>
-          <div className="animate-fade-up-delay-2 mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/#categories"
-              className="inline-flex min-h-11 items-center rounded-md border border-cyan-300/45 bg-cyan-400/20 px-5 py-2.5 text-sm font-medium text-cyan-50 transition hover:bg-cyan-400/30"
-            >
-              Browse categories
-            </Link>
-            <Link
-              href="/category/ssd"
-              className="inline-flex min-h-11 items-center rounded-md border border-teal-300/25 px-5 py-2.5 text-sm font-medium text-teal-100/80 transition hover:border-teal-300/45 hover:text-teal-50"
-            >
-              Start with SSDs
-            </Link>
-            <Link
-              href="/blog"
-              className="inline-flex min-h-11 items-center rounded-md border border-teal-300/25 px-5 py-2.5 text-sm font-medium text-teal-100/80 transition hover:border-teal-300/45 hover:text-teal-50"
-            >
-              Read the blog
+          <div className="animate-fade-up-delay-2 mt-8 flex flex-wrap items-center gap-3">
+            {featuredOverall ? (
+              <a
+                href={featuredOverall.affiliateUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored nofollow"
+                className="btn-buy"
+              >
+                Check price on Amazon
+              </a>
+            ) : (
+              <Link href="/category/ssd" className="btn-buy">
+                Check price on Amazon
+              </Link>
+            )}
+            <Link href="/#categories" className="btn-secondary">
+              Browse all categories
             </Link>
           </div>
-          <div className="animate-fade-up-delay-2 mt-6 max-w-xl">
+          <p className="animate-fade-up-delay-2 stock-note mt-3 max-w-md">
+            Prices move. Confirm live stock &amp; shipping on Amazon before you
+            buy—we never invent countdown timers or fake scarcity.
+          </p>
+          <div className="animate-fade-up-delay-2 mt-5 max-w-xl">
             <AffiliateDisclosure variant="inline" />
           </div>
         </div>
@@ -86,61 +93,86 @@ export default function Home() {
         id="categories"
         className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20"
       >
-        <h2 className="font-[family-name:var(--font-display)] text-3xl text-cyan-50 sm:text-4xl">
-          Categories
+        <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">
+          Shop by category
         </h2>
-        <p className="mt-2 max-w-2xl text-teal-100/60">
+        <p className="mt-2 max-w-2xl text-muted">
           Four gear lanes. Three research-backed picks each—best overall, best
           budget, and best premium—with verified ASINs and tagged Amazon links.
         </p>
 
-        <ul className="mt-10 grid gap-8 sm:grid-cols-2">
-          {categories.map((cat) => (
-            <li key={cat.slug}>
-              <Link
-                href={`/category/${cat.slug}`}
-                className="group block border-t border-cyan-400/20 pt-5 transition hover:border-cyan-300/45"
+        <ul className="mt-10 grid gap-0 sm:grid-cols-2">
+          {categories.map((cat) => {
+            const overall = cat.products.find((p) => p.pick === "best-overall");
+            return (
+              <li
+                key={cat.slug}
+                className="border-t border-edge py-6 sm:odd:pr-8 sm:even:pl-8"
               >
-                <span className="font-[family-name:var(--font-display)] text-2xl text-cyan-100 transition group-hover:text-cyan-50">
-                  {cat.name}
-                </span>
-                <p className="mt-2 text-sm leading-relaxed text-teal-100/55">
-                  {cat.tagline}
-                </p>
-                <span className="mt-4 inline-flex min-h-10 items-center text-sm text-cyan-300/80 transition group-hover:text-cyan-200">
-                  Compare {cat.products.length} picks →
-                </span>
-              </Link>
-            </li>
-          ))}
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                  <div className="min-w-0">
+                    <Link
+                      href={`/category/${cat.slug}`}
+                      className="group block"
+                    >
+                      <span className="font-display text-2xl font-bold text-ink transition group-hover:text-gulf">
+                        {cat.name}
+                      </span>
+                      <p className="mt-2 text-sm leading-relaxed text-muted">
+                        {cat.tagline}
+                      </p>
+                    </Link>
+                  </div>
+                  <div className="flex shrink-0 flex-wrap gap-2">
+                    {overall ? (
+                      <a
+                        href={overall.affiliateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer sponsored nofollow"
+                        className="btn-buy !min-h-10 !px-3.5 !text-sm"
+                      >
+                        Amazon
+                      </a>
+                    ) : null}
+                    <Link
+                      href={`/category/${cat.slug}`}
+                      className="btn-secondary !min-h-10 !px-3.5 !text-sm"
+                    >
+                      Compare {cat.products.length}
+                    </Link>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
-      <section className="border-t border-cyan-400/10 bg-[rgba(6,26,36,0.6)]">
+      <section className="border-y border-edge bg-surface">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <h2 className="font-[family-name:var(--font-display)] text-2xl text-cyan-50">
-            How picks work
+          <h2 className="font-display text-2xl font-bold text-ink">
+            Why players trust these picks
           </h2>
-          <ol className="mt-6 grid gap-6 sm:grid-cols-3">
+          <ol className="mt-6 grid gap-8 sm:grid-cols-3">
             {[
               {
-                t: "Best overall",
-                d: "Balanced speed, comfort, or features for most console setups—the default recommendation.",
+                t: "Console-first filters",
+                d: "Heatsink clearance, HDMI 2.1 / VRR, dialogue-friendly audio, and capture paths that fit living-room setups—not PC mod sheets.",
               },
               {
-                t: "Best budget",
-                d: "Good enough for launch night and story sessions without stretching the wallet.",
+                t: "Three clear lanes",
+                d: "Best overall, best budget, and best premium so you can decide without scrolling endless listicles.",
               },
               {
-                t: "Best premium",
-                d: "Extra headroom when you want the nicer long-term upgrade and can wait for a sale.",
+                t: "Honest affiliate path",
+                d: "Amazon links are tagged and disclosed. We never fake stock timers. You verify live price and shipping on Amazon.",
               },
             ].map((item) => (
               <li key={item.t}>
-                <p className="text-sm font-medium uppercase tracking-wider text-teal-200/50">
+                <p className="text-sm font-semibold uppercase tracking-[0.12em] text-gulf">
                   {item.t}
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-teal-100/70">
+                <p className="mt-2 text-sm leading-relaxed text-muted">
                   {item.d}
                 </p>
               </li>
@@ -158,46 +190,46 @@ export default function Home() {
           <div>
             <h2
               id="guides-heading"
-              className="font-[family-name:var(--font-display)] text-3xl text-cyan-50 sm:text-4xl"
+              className="font-display text-3xl font-bold text-ink sm:text-4xl"
             >
               From the blog
             </h2>
-            <p className="mt-2 max-w-2xl text-teal-100/60">
-              Setup and buying guides that link back to each comparison
-              category.
+            <p className="mt-2 max-w-2xl text-muted">
+              Setup and buying guides that lead back to comparison pages and
+              Amazon buy links.
             </p>
           </div>
           <Link
             href="/blog"
-            className="inline-flex min-h-10 items-center text-sm text-cyan-300/85 transition hover:text-cyan-200"
+            className="inline-flex min-h-10 items-center text-sm font-semibold text-gulf transition hover:text-ink"
           >
             All guides →
           </Link>
         </div>
 
-        <ul className="mt-10 grid gap-8 border-t border-cyan-400/15 pt-8 sm:grid-cols-3">
+        <ul className="mt-10 grid gap-8 border-t border-edge pt-8 sm:grid-cols-3">
           {latestPosts.map((post) => (
             <li key={post.slug}>
               <article>
-                <p className="text-xs font-medium uppercase tracking-wider text-teal-200/45">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-soft">
                   <time dateTime={post.publishedAt}>
                     {formatPostDate(post.publishedAt)}
                   </time>
                 </p>
-                <h3 className="mt-2 font-[family-name:var(--font-display)] text-xl text-cyan-100">
+                <h3 className="mt-2 font-display text-xl font-bold text-ink">
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="transition hover:text-cyan-50"
+                    className="transition hover:text-gulf"
                   >
                     {post.title}
                   </Link>
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-teal-100/55">
+                <p className="mt-2 text-sm leading-relaxed text-muted">
                   {post.excerpt}
                 </p>
                 <Link
                   href={`/category/${post.categorySlug}`}
-                  className="mt-3 inline-flex min-h-9 items-center text-xs text-teal-200/55 transition hover:text-cyan-200"
+                  className="mt-3 inline-flex min-h-9 items-center text-xs font-semibold text-neon transition hover:text-ink"
                 >
                   Related category →
                 </Link>

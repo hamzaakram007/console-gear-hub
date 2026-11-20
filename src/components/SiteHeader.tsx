@@ -8,48 +8,54 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-cyan-400/15 bg-[rgba(4,18,28,0.92)] backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-edge bg-[rgba(247,251,253,0.9)] backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
-          className="group flex min-w-0 items-baseline gap-2"
+          className="group flex min-w-0 flex-col"
           onClick={() => setOpen(false)}
         >
-          <span className="truncate font-[family-name:var(--font-display)] text-xl tracking-tight text-cyan-100 transition group-hover:text-cyan-50 sm:text-2xl">
+          <span className="font-display text-xl font-bold tracking-tight text-ink transition group-hover:text-gulf sm:text-2xl">
+            NeonGulf
+          </span>
+          <span className="truncate text-[0.7rem] font-medium uppercase tracking-[0.14em] text-muted-soft">
             Console Gear Hub
           </span>
         </Link>
 
         <nav
-          className="hidden items-center gap-1 lg:flex"
+          className="hidden items-center gap-0.5 lg:flex"
           aria-label="Primary"
         >
           {navCategories.map((cat) => (
             <Link
               key={cat.slug}
               href={`/category/${cat.slug}`}
-              className="rounded-md px-3 py-1.5 text-sm text-teal-100/75 transition hover:bg-cyan-400/10 hover:text-cyan-100"
+              className="rounded-md px-3 py-1.5 text-sm text-muted transition hover:bg-neon-soft hover:text-ink"
             >
               {cat.name}
             </Link>
           ))}
           <Link
             href="/blog"
-            className="rounded-md px-3 py-1.5 text-sm text-teal-100/75 transition hover:bg-cyan-400/10 hover:text-cyan-100"
+            className="rounded-md px-3 py-1.5 text-sm text-muted transition hover:bg-neon-soft hover:text-ink"
           >
             Blog
           </Link>
           <Link
             href="/about"
-            className="rounded-md px-3 py-1.5 text-sm text-teal-100/75 transition hover:bg-cyan-400/10 hover:text-cyan-100"
+            className="rounded-md px-3 py-1.5 text-sm text-muted transition hover:bg-neon-soft hover:text-ink"
           >
             About
+          </Link>
+          <Link href="/category/ssd" className="btn-buy ml-2 !min-h-9 !px-3.5 !py-1.5 !text-sm">
+            Buy on Amazon
           </Link>
         </nav>
 
         <button
           type="button"
-          className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-md border border-cyan-300/30 bg-cyan-400/10 px-3 text-sm font-medium text-cyan-100 transition hover:border-cyan-300/50 hover:bg-cyan-400/20 lg:hidden"
+          className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-md border border-edge-strong bg-surface-raised px-3 text-sm font-medium text-ink transition hover:border-gulf lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
@@ -61,14 +67,23 @@ export function SiteHeader() {
       {open ? (
         <nav
           id="mobile-nav"
-          className="border-t border-cyan-400/10 bg-[rgba(4,18,28,0.98)] px-4 py-3 lg:hidden"
+          className="border-t border-edge bg-surface-raised px-4 py-3 lg:hidden"
           aria-label="Mobile navigation"
         >
           <ul className="grid gap-1">
             <li>
               <Link
+                href="/category/ssd"
+                className="btn-buy mb-2 w-full"
+                onClick={() => setOpen(false)}
+              >
+                Buy on Amazon
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/#categories"
-                className="block rounded-md px-3 py-3 text-sm text-teal-100/80 transition hover:bg-cyan-400/10 hover:text-cyan-100"
+                className="block rounded-md px-3 py-3 text-sm text-muted transition hover:bg-neon-soft hover:text-ink"
                 onClick={() => setOpen(false)}
               >
                 All categories
@@ -78,11 +93,11 @@ export function SiteHeader() {
               <li key={cat.slug}>
                 <Link
                   href={`/category/${cat.slug}`}
-                  className="block rounded-md px-3 py-3 text-sm text-teal-100/80 transition hover:bg-cyan-400/10 hover:text-cyan-100"
+                  className="block rounded-md px-3 py-3 text-sm text-muted transition hover:bg-neon-soft hover:text-ink"
                   onClick={() => setOpen(false)}
                 >
                   {cat.name}
-                  <span className="mt-0.5 block text-xs text-teal-100/45">
+                  <span className="mt-0.5 block text-xs text-muted-soft">
                     {cat.tagline}
                   </span>
                 </Link>
@@ -91,11 +106,11 @@ export function SiteHeader() {
             <li>
               <Link
                 href="/blog"
-                className="block rounded-md px-3 py-3 text-sm text-teal-100/80 transition hover:bg-cyan-400/10 hover:text-cyan-100"
+                className="block rounded-md px-3 py-3 text-sm text-muted transition hover:bg-neon-soft hover:text-ink"
                 onClick={() => setOpen(false)}
               >
                 Blog
-                <span className="mt-0.5 block text-xs text-teal-100/45">
+                <span className="mt-0.5 block text-xs text-muted-soft">
                   Storage, audio, display, and capture guides
                 </span>
               </Link>
@@ -103,11 +118,11 @@ export function SiteHeader() {
             <li>
               <Link
                 href="/about"
-                className="block rounded-md px-3 py-3 text-sm text-teal-100/80 transition hover:bg-cyan-400/10 hover:text-cyan-100"
+                className="block rounded-md px-3 py-3 text-sm text-muted transition hover:bg-neon-soft hover:text-ink"
                 onClick={() => setOpen(false)}
               >
                 About
-                <span className="mt-0.5 block text-xs text-teal-100/45">
+                <span className="mt-0.5 block text-xs text-muted-soft">
                   How NeonGulf picks and discloses affiliates
                 </span>
               </Link>

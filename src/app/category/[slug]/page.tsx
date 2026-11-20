@@ -53,6 +53,7 @@ export default async function CategoryPage({ params }: PageProps) {
   if (!category) notFound();
 
   const relatedPosts = getPostsByCategory(category.slug);
+  const overall = category.products.find((p) => p.pick === "best-overall");
 
   const itemListJsonLd = {
     "@context": "https://schema.org",
@@ -84,7 +85,7 @@ export default async function CategoryPage({ params }: PageProps) {
   };
 
   return (
-    <div className="hero-wash relative">
+    <div className="page-wash relative">
       <div className="noise-overlay absolute inset-0" aria-hidden />
       <script
         type="application/ld+json"
@@ -92,28 +93,43 @@ export default async function CategoryPage({ params }: PageProps) {
       />
 
       <div className="relative mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
-        <nav className="text-sm text-teal-100/50" aria-label="Breadcrumb">
-          <Link href="/" className="transition hover:text-cyan-200">
+        <nav className="text-sm text-muted-soft" aria-label="Breadcrumb">
+          <Link href="/" className="transition hover:text-gulf">
             Home
           </Link>
           <span className="mx-2 opacity-40">/</span>
-          <span className="text-teal-100/80">{category.name}</span>
+          <span className="text-ink">{category.name}</span>
         </nav>
 
         <header className="mt-6 max-w-3xl">
-          <h1 className="font-[family-name:var(--font-display)] text-3xl leading-tight text-cyan-50 sm:text-5xl">
+          <h1 className="font-display text-3xl font-extrabold leading-tight text-ink sm:text-5xl">
             {category.name}
           </h1>
-          <p className="mt-3 text-base text-teal-100/70 sm:text-lg">
+          <p className="mt-3 text-base text-muted sm:text-lg">
             {category.tagline}
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-teal-100/55">
+          <p className="mt-4 text-sm leading-relaxed text-muted">
             {category.description}
           </p>
-          <p className="mt-3 rounded-md border border-cyan-400/15 bg-cyan-950/40 px-3 py-2.5 text-sm leading-relaxed text-cyan-100/75">
-            <span className="font-medium text-cyan-100/90">Console angle:</span>{" "}
+          <p className="mt-3 border border-edge bg-surface-raised px-3 py-2.5 text-sm leading-relaxed text-muted">
+            <span className="font-semibold text-gulf">Console angle:</span>{" "}
             {category.consoleAngle}
           </p>
+          {overall ? (
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <a
+                href={overall.affiliateUrl}
+                target="_blank"
+                rel="noopener noreferrer sponsored nofollow"
+                className="btn-buy"
+              >
+                {overall.affiliateLabel}
+              </a>
+              <p className="stock-note max-w-xs">
+                Best-overall pick — confirm live stock &amp; shipping on Amazon.
+              </p>
+            </div>
+          ) : null}
           <div className="mt-4">
             <AffiliateDisclosure variant="inline" />
           </div>
@@ -122,11 +138,11 @@ export default async function CategoryPage({ params }: PageProps) {
         <section className="mt-12" aria-labelledby="picks-heading">
           <h2
             id="picks-heading"
-            className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+            className="font-display text-2xl font-bold text-ink"
           >
             Our three picks
           </h2>
-          <div className="mt-6 grid gap-10 border-t border-cyan-400/15 pt-8 lg:grid-cols-3 lg:gap-8">
+          <div className="mt-6 grid gap-10 border-t border-edge pt-8 lg:grid-cols-3 lg:gap-8">
             {category.products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -136,11 +152,11 @@ export default async function CategoryPage({ params }: PageProps) {
         <section className="mt-16" aria-labelledby="table-heading">
           <h2
             id="table-heading"
-            className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+            className="font-display text-2xl font-bold text-ink"
           >
             Spec comparison
           </h2>
-          <p className="mt-2 max-w-2xl text-sm text-teal-100/55">
+          <p className="mt-2 max-w-2xl text-sm text-muted">
             Filter to one pick on mobile, or scroll the sticky-column table on
             larger screens. Highlighted cells flag the strongest numeric value
             in that row.
@@ -154,11 +170,11 @@ export default async function CategoryPage({ params }: PageProps) {
           <section className="mt-16" aria-labelledby="guides-heading">
             <h2
               id="guides-heading"
-              className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+              className="font-display text-2xl font-bold text-ink"
             >
               Related guides
             </h2>
-            <p className="mt-2 max-w-2xl text-sm text-teal-100/55">
+            <p className="mt-2 max-w-2xl text-sm text-muted">
               Blog posts that dig into buying and setup decisions for this
               category.
             </p>
@@ -167,12 +183,12 @@ export default async function CategoryPage({ params }: PageProps) {
                 <li key={post.slug}>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="block rounded-md border border-cyan-400/15 px-4 py-3 transition hover:border-cyan-300/40"
+                    className="block border border-edge bg-surface-raised px-4 py-3 transition hover:border-gulf"
                   >
-                    <span className="font-[family-name:var(--font-display)] text-lg text-cyan-100">
+                    <span className="font-display text-lg font-bold text-ink">
                       {post.title}
                     </span>
-                    <span className="mt-1 block text-sm text-teal-100/55">
+                    <span className="mt-1 block text-sm text-muted">
                       {post.excerpt}
                     </span>
                   </Link>
@@ -183,10 +199,10 @@ export default async function CategoryPage({ params }: PageProps) {
         ) : null}
 
         <nav
-          className="mt-16 border-t border-cyan-400/15 pt-8"
+          className="mt-16 border-t border-edge pt-8"
           aria-label="Other categories"
         >
-          <p className="text-xs font-medium uppercase tracking-wider text-teal-200/45">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-soft">
             More categories
           </p>
           <ul className="mt-3 flex flex-wrap gap-3">
@@ -196,7 +212,7 @@ export default async function CategoryPage({ params }: PageProps) {
                 <li key={c.slug}>
                   <Link
                     href={`/category/${c.slug}`}
-                    className="inline-flex min-h-10 items-center rounded-md border border-cyan-400/20 px-3 py-1.5 text-sm text-teal-100/75 transition hover:border-cyan-300/40 hover:text-cyan-100"
+                    className="btn-secondary !min-h-10 !px-3 !py-1.5 !text-sm"
                   >
                     {c.name}
                   </Link>
@@ -205,7 +221,7 @@ export default async function CategoryPage({ params }: PageProps) {
             <li>
               <Link
                 href="/blog"
-                className="inline-flex min-h-10 items-center rounded-md border border-cyan-400/20 px-3 py-1.5 text-sm text-teal-100/75 transition hover:border-cyan-300/40 hover:text-cyan-100"
+                className="btn-secondary !min-h-10 !px-3 !py-1.5 !text-sm"
               >
                 Blog
               </Link>

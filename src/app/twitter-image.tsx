@@ -16,18 +16,18 @@ export default function TwitterImage() {
           justifyContent: "space-between",
           padding: "64px",
           background:
-            "linear-gradient(145deg, #04121c 0%, #0a2a38 48%, #06303a 100%)",
-          color: "#ecfeff",
-          fontFamily: "Georgia, serif",
+            "linear-gradient(145deg, #d5eaf1 0%, #e9f2f5 48%, #f3f8fa 100%)",
+          color: "#0b1c2c",
+          fontFamily: "system-ui, sans-serif",
         }}
       >
         <div
           style={{
             display: "flex",
-            fontSize: 28,
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            color: "#5eead4",
+            fontSize: 36,
+            fontWeight: 800,
+            letterSpacing: "-0.02em",
+            color: "#0b1c2c",
           }}
         >
           NeonGulf
@@ -36,9 +36,10 @@ export default function TwitterImage() {
           <div
             style={{
               display: "flex",
-              fontSize: 72,
+              fontSize: 68,
+              fontWeight: 800,
               lineHeight: 1.05,
-              color: "#cffafe",
+              color: "#0b1c2c",
               maxWidth: 980,
             }}
           >
@@ -47,11 +48,10 @@ export default function TwitterImage() {
           <div
             style={{
               display: "flex",
-              fontSize: 32,
+              fontSize: 30,
               lineHeight: 1.35,
-              color: "#99f6e4",
+              color: "#4a6572",
               maxWidth: 900,
-              fontFamily: "system-ui, sans-serif",
             }}
           >
             Compare SSDs, headsets, TVs & capture cards for PS5 and Xbox
@@ -60,12 +60,26 @@ export default function TwitterImage() {
         <div
           style={{
             display: "flex",
+            alignItems: "center",
+            gap: 16,
             fontSize: 24,
-            color: "#67e8f9",
-            fontFamily: "system-ui, sans-serif",
+            color: "#1a6f8f",
           }}
         >
-          neongulf.com
+          <div
+            style={{
+              display: "flex",
+              background: "#00a88a",
+              color: "#ffffff",
+              padding: "10px 18px",
+              borderRadius: 8,
+              fontWeight: 700,
+              fontSize: 22,
+            }}
+          >
+            Check price on Amazon
+          </div>
+          <span>neongulf.com</span>
         </div>
       </div>
     ),

@@ -2,7 +2,7 @@ import type { BlogBlock } from "@/lib/posts";
 
 export function BlogArticleBody({ blocks }: { blocks: BlogBlock[] }) {
   return (
-    <div className="mt-10 max-w-3xl space-y-6 text-base leading-relaxed text-teal-100/75">
+    <div className="mt-10 max-w-3xl space-y-6 text-base leading-relaxed text-muted">
       {blocks.map((block, index) => {
         const key = `${block.type}-${index}`;
         if (block.type === "p") {
@@ -12,7 +12,7 @@ export function BlogArticleBody({ blocks }: { blocks: BlogBlock[] }) {
           return (
             <h2
               key={key}
-              className="pt-4 font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+              className="pt-4 font-display text-2xl font-bold text-ink"
             >
               {block.text}
             </h2>
@@ -20,7 +20,10 @@ export function BlogArticleBody({ blocks }: { blocks: BlogBlock[] }) {
         }
         if (block.type === "ul") {
           return (
-            <ul key={key} className="list-disc space-y-2 pl-5 marker:text-cyan-300/60">
+            <ul
+              key={key}
+              className="list-disc space-y-2 pl-5 marker:text-neon"
+            >
               {block.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -30,7 +33,7 @@ export function BlogArticleBody({ blocks }: { blocks: BlogBlock[] }) {
         return (
           <ol
             key={key}
-            className="list-decimal space-y-2 pl-5 marker:text-cyan-300/60"
+            className="list-decimal space-y-2 pl-5 marker:text-gulf"
           >
             {block.items.map((item) => (
               <li key={item}>{item}</li>

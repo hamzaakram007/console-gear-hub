@@ -31,44 +31,41 @@ export default function BlogIndexPage() {
   const categories = getCategories();
 
   return (
-    <div className="hero-wash relative">
+    <div className="page-wash relative">
       <div className="noise-overlay absolute inset-0" aria-hidden />
       <div className="relative mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
-        <nav className="text-sm text-teal-100/50" aria-label="Breadcrumb">
-          <Link href="/" className="transition hover:text-cyan-200">
+        <nav className="text-sm text-muted-soft" aria-label="Breadcrumb">
+          <Link href="/" className="transition hover:text-gulf">
             Home
           </Link>
           <span className="mx-2 opacity-40">/</span>
-          <span className="text-teal-100/80">Blog</span>
+          <span className="text-ink">Blog</span>
         </nav>
 
         <header className="mt-6 max-w-3xl">
-          <h1 className="font-[family-name:var(--font-display)] text-3xl leading-tight text-cyan-50 sm:text-5xl">
+          <h1 className="font-display text-3xl font-extrabold leading-tight text-ink sm:text-5xl">
             Blog
           </h1>
-          <p className="mt-3 text-base leading-relaxed text-teal-100/70 sm:text-lg">
+          <p className="mt-3 text-base leading-relaxed text-muted sm:text-lg">
             Practical buying and setup guides for console storage, headsets,
-            displays, and capture—written for PS5 and Xbox Series players, not PC
-            mod shops.
+            displays, and capture—written for PS5 and Xbox Series players, not
+            PC mod shops.
           </p>
           <div className="mt-4">
             <AffiliateDisclosure variant="inline" />
           </div>
         </header>
 
-        <nav
-          className="mt-8"
-          aria-label="Jump to comparison categories"
-        >
-          <p className="text-xs font-medium uppercase tracking-wider text-teal-200/45">
-            Compare gear
+        <nav className="mt-8" aria-label="Jump to comparison categories">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-soft">
+            Compare &amp; buy
           </p>
           <ul className="mt-3 flex flex-wrap gap-2">
             {categories.map((cat) => (
               <li key={cat.slug}>
                 <Link
                   href={`/category/${cat.slug}`}
-                  className="inline-flex min-h-10 items-center rounded-md border border-cyan-400/20 px-3 py-1.5 text-sm text-teal-100/75 transition hover:border-cyan-300/40 hover:text-cyan-100"
+                  className="btn-secondary !min-h-10 !px-3 !py-1.5 !text-sm"
                 >
                   {cat.name}
                 </Link>
@@ -77,11 +74,11 @@ export default function BlogIndexPage() {
           </ul>
         </nav>
 
-        <ul className="mt-12 grid gap-10 border-t border-cyan-400/15 pt-10">
+        <ul className="mt-12 grid gap-10 border-t border-edge pt-10">
           {posts.map((post) => (
             <li key={post.slug}>
               <article>
-                <p className="text-xs font-medium uppercase tracking-wider text-teal-200/45">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-soft">
                   <time dateTime={post.publishedAt}>
                     {formatPostDate(post.publishedAt)}
                   </time>
@@ -94,7 +91,7 @@ export default function BlogIndexPage() {
                   </span>
                   <Link
                     href={`/category/${post.categorySlug}`}
-                    className="transition hover:text-cyan-200"
+                    className="transition hover:text-gulf"
                   >
                     {
                       categories.find((c) => c.slug === post.categorySlug)
@@ -102,23 +99,31 @@ export default function BlogIndexPage() {
                     }
                   </Link>
                 </p>
-                <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-cyan-100 sm:text-3xl">
+                <h2 className="mt-2 font-display text-2xl font-bold text-ink sm:text-3xl">
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="transition hover:text-cyan-50"
+                    className="transition hover:text-gulf"
                   >
                     {post.title}
                   </Link>
                 </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-teal-100/60 sm:text-base">
+                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
                   {post.excerpt}
                 </p>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="mt-4 inline-flex min-h-10 items-center text-sm text-cyan-300/85 transition hover:text-cyan-200"
-                >
-                  Read guide →
-                </Link>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="inline-flex min-h-10 items-center text-sm font-semibold text-gulf transition hover:text-ink"
+                  >
+                    Read guide →
+                  </Link>
+                  <Link
+                    href={`/category/${post.categorySlug}`}
+                    className="btn-buy !min-h-10 !px-3.5 !text-sm"
+                  >
+                    Shop category
+                  </Link>
+                </div>
               </article>
             </li>
           ))}

@@ -36,7 +36,7 @@ export default function PrivacyPage() {
   };
 
   return (
-    <div className="hero-wash relative">
+    <div className="page-wash relative">
       <div className="noise-overlay absolute inset-0" aria-hidden />
       <script
         type="application/ld+json"
@@ -44,30 +44,30 @@ export default function PrivacyPage() {
       />
 
       <article className="relative mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-16">
-        <nav className="text-sm text-teal-100/50" aria-label="Breadcrumb">
-          <Link href="/" className="transition hover:text-cyan-200">
+        <nav className="text-sm text-muted-soft" aria-label="Breadcrumb">
+          <Link href="/" className="transition hover:text-gulf">
             Home
           </Link>
           <span className="mx-2 opacity-40">/</span>
-          <span className="text-teal-100/80">Privacy</span>
+          <span className="text-ink">Privacy</span>
         </nav>
 
         <header className="mt-6">
-          <h1 className="font-[family-name:var(--font-display)] text-3xl leading-tight text-cyan-50 sm:text-5xl">
+          <h1 className="font-display text-3xl font-extrabold leading-tight text-ink sm:text-5xl">
             Privacy Policy
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-teal-100/70">
+          <p className="mt-4 text-base leading-relaxed text-muted">
             Last updated March 20, 2026. This policy explains what NeonGulf
             collects when you use Console Gear Hub at neongulf.com and related
             hosts such as gear.neongulf.com.
           </p>
         </header>
 
-        <div className="mt-10 space-y-8 text-sm leading-relaxed text-teal-100/70 sm:text-base">
+        <div className="mt-10 space-y-8 text-sm leading-relaxed text-muted sm:text-base">
           <section aria-labelledby="overview">
             <h2
               id="overview"
-              className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+              className="font-display text-2xl font-bold text-ink"
             >
               Overview
             </h2>
@@ -82,11 +82,11 @@ export default function PrivacyPage() {
           <section aria-labelledby="info-we-collect">
             <h2
               id="info-we-collect"
-              className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+              className="font-display text-2xl font-bold text-ink"
             >
               Information we may collect
             </h2>
-            <ul className="mt-3 list-disc space-y-2 pl-5">
+            <ul className="mt-3 list-disc space-y-2 pl-5 marker:text-neon">
               <li>
                 Standard server and CDN logs (IP address, user agent, referrer,
                 timestamps) used for security, debugging, and traffic
@@ -107,7 +107,7 @@ export default function PrivacyPage() {
           <section aria-labelledby="cookies">
             <h2
               id="cookies"
-              className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+              className="font-display text-2xl font-bold text-ink"
             >
               Cookies and affiliate links
             </h2>
@@ -121,10 +121,7 @@ export default function PrivacyPage() {
           </section>
 
           <section aria-labelledby="use">
-            <h2
-              id="use"
-              className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
-            >
+            <h2 id="use" className="font-display text-2xl font-bold text-ink">
               How we use information
             </h2>
             <p className="mt-3">
@@ -137,7 +134,7 @@ export default function PrivacyPage() {
           <section aria-labelledby="third-parties">
             <h2
               id="third-parties"
-              className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+              className="font-display text-2xl font-bold text-ink"
             >
               Third parties
             </h2>
@@ -147,7 +144,7 @@ export default function PrivacyPage() {
               data under their own terms. See also our{" "}
               <Link
                 href="/about"
-                className="text-cyan-200 underline-offset-2 hover:underline"
+                className="font-semibold text-gulf underline-offset-2 hover:underline"
               >
                 About
               </Link>{" "}
@@ -158,7 +155,7 @@ export default function PrivacyPage() {
           <section aria-labelledby="contact">
             <h2
               id="contact"
-              className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+              className="font-display text-2xl font-bold text-ink"
             >
               Contact
             </h2>
@@ -170,8 +167,11 @@ export default function PrivacyPage() {
           </section>
         </div>
 
-        <p className="mt-12 text-sm text-teal-100/50">
-          <Link href="/" className="text-cyan-300/85 hover:text-cyan-200">
+        <p className="mt-12 text-sm">
+          <Link
+            href="/"
+            className="font-semibold text-gulf transition hover:text-ink"
+          >
             ← Back to Console Gear Hub
           </Link>
         </p>
