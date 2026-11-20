@@ -3,7 +3,7 @@ import { getAllCategorySlugs } from "@/lib/products";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://console-gear-hub.vercel.app";
+  "https://gear.neongulf.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

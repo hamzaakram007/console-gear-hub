@@ -1,8 +1,8 @@
 # Console Gear Hub
 
-Console gear comparison site for **PS5** and **Xbox Series**: SSD storage, headsets, TVs/monitors, and capture cards. Three picks per category (best overall / budget / premium), side-by-side comparison UX, Amazon Associates–ready links, and a clear FTC affiliate disclosure.
+Console gear comparison site for **PS5** and **Xbox Series**: SSD storage, headsets, TVs/monitors, and capture cards. Three research-backed picks per category (best overall / budget / premium), side-by-side comparison UX, Amazon Associates links via `AMAZON_TAG`, and a clear FTC affiliate disclosure.
 
-**Live:** [https://console-gear-hub.vercel.app](https://console-gear-hub.vercel.app)
+**Live:** [https://gear.neongulf.com](https://gear.neongulf.com) · [https://neongulf.com](https://neongulf.com)
 
 **Not affiliated with Sony, Microsoft, Nintendo, Amazon, or any game publisher.**
 
@@ -11,7 +11,7 @@ Console gear comparison site for **PS5** and **Xbox Series**: SSD storage, heads
 - Next.js (App Router) + TypeScript + Tailwind CSS
 - Product catalog: `src/data/products.json`
 - Affiliate URLs: `src/lib/affiliate.ts` (reads `AMAZON_TAG`)
-- Deploy target: Vercel
+- Deploy target: Vercel (`team_F6KmHT8xzv90muVN0aGMdgbc`)
 
 ## Pages
 
@@ -69,19 +69,18 @@ npm run start
    - At render time the app builds:
      - `https://www.amazon.com/dp/{ASIN}?tag={AMAZON_TAG}` when an ASIN is present
      - otherwise `https://www.amazon.com/s?k={keywords}&tag={AMAZON_TAG}`
-   - If `AMAZON_TAG` is unset, links use the placeholder `yourtag-20` so the site still works in demos.
+   - If `AMAZON_TAG` is unset, links fall back to `yourtag-20` so local builds still render.
 
 5. **Compliance checklist**
 
    - Keep the sitewide FTC disclosure (banner + footer) visible.
    - Do not cloak affiliate URLs or hide that links are paid.
-   - Verify ASINs and prices on Amazon before publishing “live” recommendations.
+   - Verify ASINs and prices on Amazon before publishing recommendations.
    - Follow [Amazon Associates Operating Agreement](https://affiliate-program.amazon.com/help/operating/agreement) rules for trademarks and link formatting.
-   - Replace placeholder ASINs in `products.json` with the exact ASINs from your Associates site strip tools when you go live.
 
 6. **Optional site URL**
 
-   Set `NEXT_PUBLIC_SITE_URL` to your production origin so Open Graph, canonical URLs, sitemap, and robots stay correct (defaults to `https://console-gear-hub.vercel.app`).
+   Set `NEXT_PUBLIC_SITE_URL` to your production origin so Open Graph, canonical URLs, sitemap, and robots stay correct (defaults to `https://gear.neongulf.com`).
 
 ## Updating products
 
@@ -98,7 +97,7 @@ Do **not** hard-code `tag=` in the JSON; the tag always comes from `AMAZON_TAG`.
 
 1. Import `hamzaakram007/console-gear-hub`.
 2. Framework: Next.js (auto-detected).
-3. Add env vars: `AMAZON_TAG`, optionally `NEXT_PUBLIC_SITE_URL`.
+3. Add env vars: `AMAZON_TAG`, optionally `NEXT_PUBLIC_SITE_URL=https://gear.neongulf.com`.
 4. Deploy (or push to `main` for auto-deploy).
 
 Team reference: `team_F6KmHT8xzv90muVN0aGMdgbc`.
@@ -108,4 +107,4 @@ Team reference: `team_F6KmHT8xzv90muVN0aGMdgbc`.
 - Console-only framing (PS5 / Xbox Series). No PC mod or unofficial download messaging.
 - Affiliate disclosure appears in the top banner, inline near CTAs, and a full FTC block in the footer.
 - Buy links use `rel="sponsored nofollow"`.
-- ASINs in the catalog may still be placeholders until you swap in verified listings from Associates tools.
+- Catalog ASINs are verified Amazon listing IDs for the named SKUs; always re-check availability before featuring a sale.

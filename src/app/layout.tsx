@@ -18,7 +18,7 @@ const body = DM_Sans({
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://console-gear-hub.vercel.app";
+  "https://gear.neongulf.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

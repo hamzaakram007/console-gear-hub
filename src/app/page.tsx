@@ -69,8 +69,8 @@ export default function Home() {
           Categories
         </h2>
         <p className="mt-2 max-w-2xl text-teal-100/60">
-          Four gear lanes. Three picks each—best overall, best budget, and best
-          premium—with real-looking product write-ups and tagged Amazon links.
+          Four gear lanes. Three research-backed picks each—best overall, best
+          budget, and best premium—with verified ASINs and tagged Amazon links.
         </p>
 
         <ul className="mt-10 grid gap-8 sm:grid-cols-2">
