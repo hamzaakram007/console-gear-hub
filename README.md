@@ -2,7 +2,7 @@
 
 Console gear comparison site for **PS5** and **Xbox Series**: SSD storage, headsets, TVs/monitors, and capture cards. Three research-backed picks per category (best overall / budget / premium), side-by-side comparison UX, Amazon Associates links via `AMAZON_TAG`, and a clear FTC affiliate disclosure.
 
-**Live:** [https://gear.neongulf.com](https://gear.neongulf.com) · [https://neongulf.com](https://neongulf.com)
+**Live (canonical):** [https://neongulf.com](https://neongulf.com) · also [https://gear.neongulf.com](https://gear.neongulf.com)
 
 **Not affiliated with Sony, Microsoft, Nintendo, Amazon, or any game publisher.**
 
@@ -18,13 +18,15 @@ Console gear comparison site for **PS5** and **Xbox Series**: SSD storage, heads
 
 | Route | What it does |
 | --- | --- |
-| `/` | Landing — brand hero + category list |
+| `/` | Landing — brand hero + category list + blog teaser |
 | `/blog` | Editorial guides index |
 | `/blog/[slug]` | SEO guides (SSD, headset, display, capture, checklist) |
 | `/category/ssd` | SSD storage picks + comparison |
 | `/category/headset` | Headset picks + comparison |
 | `/category/tv-monitor` | TV/monitor picks + comparison |
 | `/category/capture-card` | Capture card picks + comparison |
+| `/about` | About NeonGulf / how picks & affiliates work |
+| `/privacy` | Privacy policy (Associates-friendly) |
 | `/sitemap.xml` | SEO sitemap |
 | `/robots.txt` | Crawler rules |
 
@@ -83,7 +85,7 @@ npm run start
 
 6. **Optional site URL**
 
-   Set `NEXT_PUBLIC_SITE_URL` to your production origin so Open Graph, canonical URLs, sitemap, and robots stay correct (defaults to `https://gear.neongulf.com`).
+   Set `NEXT_PUBLIC_SITE_URL` to your production origin so Open Graph, canonical URLs, sitemap, and robots stay correct (defaults to `https://neongulf.com`).
 
 ## Updating products
 
@@ -100,7 +102,7 @@ Do **not** hard-code `tag=` in the JSON; the tag always comes from `AMAZON_TAG`.
 
 1. Import `hamzaakram007/console-gear-hub`.
 2. Framework: Next.js (auto-detected).
-3. Add env vars: `AMAZON_TAG`, optionally `NEXT_PUBLIC_SITE_URL=https://gear.neongulf.com`.
+3. Add env vars: `AMAZON_TAG=neongulf-20`, `NEXT_PUBLIC_SITE_URL=https://neongulf.com`.
 4. Deploy (or push to `main` for auto-deploy).
 
 Team reference: `team_F6KmHT8xzv90muVN0aGMdgbc`.

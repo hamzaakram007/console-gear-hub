@@ -3,32 +3,39 @@ import { Fraunces, DM_Sans } from "next/font/google";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import {
+  BRAND_NAME,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_URL,
+} from "@/lib/site";
 import "./globals.css";
 
 const display = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
   axes: ["SOFT", "WONK", "opsz"],
+  display: "swap",
 });
 
 const body = DM_Sans({
   variable: "--font-body",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://gear.neongulf.com";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default:
-      "Console Gear Hub — Compare SSDs, headsets, TVs & capture cards for PS5 / Xbox",
-    template: "%s · Console Gear Hub",
+    default: `${SITE_NAME} — Compare SSDs, headsets, TVs & capture cards for PS5 / Xbox`,
+    template: `%s · ${SITE_NAME}`,
   },
-  description:
-    "Honest side-by-side console gear comparisons for PS5 and Xbox Series: SSD storage, gaming headsets, TVs & monitors, and capture cards. Best overall, budget, and premium picks with Amazon affiliate links and a clear FTC disclosure.",
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: BRAND_NAME, url: SITE_URL }],
+  creator: BRAND_NAME,
+  publisher: BRAND_NAME,
   keywords: [
     "console gear",
     "PS5 SSD",
@@ -36,28 +43,33 @@ export const metadata: Metadata = {
     "gaming TV HDMI 2.1",
     "capture card console",
     "console comparison",
-    "Amazon Associates",
+    "NeonGulf",
   ],
-  authors: [{ name: "Console Gear Hub" }],
-  creator: "Console Gear Hub",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteUrl,
-    siteName: "Console Gear Hub",
-    title: "Console Gear Hub — Console gear comparisons that stay honest",
+    url: SITE_URL,
+    siteName: `${SITE_NAME} · ${BRAND_NAME}`,
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
     description:
       "Three picks per category for SSD, headset, display, and capture gear built for PS5 and Xbox Series—not PC mod shops.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Console Gear Hub",
+    title: `${SITE_NAME} · ${BRAND_NAME}`,
     description:
       "Compare console SSDs, headsets, TVs, and capture cards with clear affiliate disclosure.",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   alternates: {
     canonical: "/",
@@ -72,13 +84,29 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  const jsonLd = {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: BRAND_NAME,
+    alternateName: SITE_NAME,
+    url: SITE_URL,
+    description: SITE_TAGLINE,
+    foundingDate: "2026",
+  };
+
+  const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Console Gear Hub",
-    url: siteUrl,
-    description:
-      "Side-by-side console gear comparisons for PS5 and Xbox Series with affiliate disclosure.",
+    name: SITE_NAME,
+    alternateName: BRAND_NAME,
+    url: SITE_URL,
+    description: SITE_DESCRIPTION,
+    publisher: {
+      "@type": "Organization",
+      name: BRAND_NAME,
+      url: SITE_URL,
+    },
+    inLanguage: "en-US",
   };
 
   return (
@@ -89,7 +117,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col font-sans text-foreground">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([organizationJsonLd, websiteJsonLd]),
+          }}
         />
         <AffiliateDisclosure variant="banner" />
         <SiteHeader />

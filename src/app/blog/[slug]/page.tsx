@@ -9,6 +9,8 @@ import {
   getPost,
   getPosts,
 } from "@/lib/posts";
+import { getCategory } from "@/lib/products";
+import { absoluteUrl, BRAND_NAME, SITE_NAME } from "@/lib/site";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -36,6 +38,8 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
+      siteName: `${SITE_NAME} · ${BRAND_NAME}`,
+      authors: [BRAND_NAME],
     },
     twitter: {
       card: "summary_large_image",
@@ -51,6 +55,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   if (!post) notFound();
 
   const related = getPosts().filter((p) => p.slug !== post.slug).slice(0, 3);
+  const category = getCategory(post.categorySlug);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -61,14 +66,24 @@ export default async function BlogPostPage({ params }: PageProps) {
     dateModified: post.updatedAt,
     author: {
       "@type": "Organization",
-      name: "Console Gear Hub",
+      name: BRAND_NAME,
+      url: absoluteUrl("/"),
     },
     publisher: {
       "@type": "Organization",
-      name: "Console Gear Hub",
+      name: BRAND_NAME,
+      url: absoluteUrl("/"),
     },
-    mainEntityOfPage: `/blog/${post.slug}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": absoluteUrl(`/blog/${post.slug}`),
+    },
     keywords: post.keywords.join(", "),
+    isPartOf: {
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: absoluteUrl("/"),
+    },
   };
 
   return (
@@ -101,6 +116,19 @@ export default async function BlogPostPage({ params }: PageProps) {
               ·
             </span>
             {post.readingMinutes} min read
+            {category ? (
+              <>
+                <span className="mx-2 opacity-40" aria-hidden>
+                  ·
+                </span>
+                <Link
+                  href={`/category/${category.slug}`}
+                  className="transition hover:text-cyan-200"
+                >
+                  {category.name}
+                </Link>
+              </>
+            ) : null}
           </p>
           <h1 className="mt-3 font-[family-name:var(--font-display)] text-3xl leading-tight text-cyan-50 sm:text-5xl">
             {post.title}
@@ -112,6 +140,24 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         <BlogArticleBody blocks={post.blocks} />
         <BlogAffiliateCta post={post} />
+
+        {category ? (
+          <aside
+            className="mt-12 rounded-md border border-cyan-400/15 bg-cyan-950/30 px-4 py-4"
+            aria-label="Related comparison"
+          >
+            <p className="text-xs font-medium uppercase tracking-wider text-teal-200/45">
+              Related comparison
+            </p>
+            <Link
+              href={`/category/${category.slug}`}
+              className="mt-2 inline-flex font-[family-name:var(--font-display)] text-xl text-cyan-100 transition hover:text-cyan-50"
+            >
+              {category.name} picks →
+            </Link>
+            <p className="mt-1 text-sm text-teal-100/55">{category.tagline}</p>
+          </aside>
+        ) : null}
 
         <nav
           className="mt-16 border-t border-cyan-400/15 pt-8"

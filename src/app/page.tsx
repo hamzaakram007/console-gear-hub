@@ -1,18 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { formatPostDate, getPosts } from "@/lib/posts";
 import { getCategories } from "@/lib/products";
+import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title:
-    "Console Gear Hub — Compare SSDs, headsets, TVs & capture cards for PS5 / Xbox",
-  description:
-    "Pick the right console SSD, headset, display, and capture card with three honest picks per category, side-by-side specs, and clear Amazon affiliate disclosure.",
+  title: {
+    absolute: `${SITE_NAME} — Compare SSDs, headsets, TVs & capture cards for PS5 / Xbox`,
+  },
+  description: SITE_DESCRIPTION,
   alternates: { canonical: "/" },
+  openGraph: {
+    title: `${SITE_NAME} — console gear comparisons that stay honest`,
+    description: SITE_DESCRIPTION,
+    url: "/",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description:
+      "Compare console SSDs, headsets, TVs, and capture cards with clear affiliate disclosure.",
+  },
 };
 
 export default function Home() {
   const categories = getCategories();
+  const latestPosts = getPosts().slice(0, 3);
 
   return (
     <>
@@ -132,6 +147,64 @@ export default function Home() {
             ))}
           </ol>
         </div>
+      </section>
+
+      <section
+        id="guides"
+        className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20"
+        aria-labelledby="guides-heading"
+      >
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2
+              id="guides-heading"
+              className="font-[family-name:var(--font-display)] text-3xl text-cyan-50 sm:text-4xl"
+            >
+              From the blog
+            </h2>
+            <p className="mt-2 max-w-2xl text-teal-100/60">
+              Setup and buying guides that link back to each comparison
+              category.
+            </p>
+          </div>
+          <Link
+            href="/blog"
+            className="inline-flex min-h-10 items-center text-sm text-cyan-300/85 transition hover:text-cyan-200"
+          >
+            All guides →
+          </Link>
+        </div>
+
+        <ul className="mt-10 grid gap-8 border-t border-cyan-400/15 pt-8 sm:grid-cols-3">
+          {latestPosts.map((post) => (
+            <li key={post.slug}>
+              <article>
+                <p className="text-xs font-medium uppercase tracking-wider text-teal-200/45">
+                  <time dateTime={post.publishedAt}>
+                    {formatPostDate(post.publishedAt)}
+                  </time>
+                </p>
+                <h3 className="mt-2 font-[family-name:var(--font-display)] text-xl text-cyan-100">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="transition hover:text-cyan-50"
+                  >
+                    {post.title}
+                  </Link>
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-teal-100/55">
+                  {post.excerpt}
+                </p>
+                <Link
+                  href={`/category/${post.categorySlug}`}
+                  className="mt-3 inline-flex min-h-9 items-center text-xs text-teal-200/55 transition hover:text-cyan-200"
+                >
+                  Related category →
+                </Link>
+              </article>
+            </li>
+          ))}
+        </ul>
       </section>
     </>
   );

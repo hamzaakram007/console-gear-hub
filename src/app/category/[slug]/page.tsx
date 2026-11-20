@@ -4,11 +4,13 @@ import { notFound } from "next/navigation";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { ProductCard } from "@/components/ProductCard";
+import { getPostsByCategory } from "@/lib/posts";
 import {
   getAllCategorySlugs,
   getCategories,
   getCategory,
 } from "@/lib/products";
+import { absoluteUrl, BRAND_NAME, SITE_NAME } from "@/lib/site";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -35,6 +37,7 @@ export async function generateMetadata({
       description,
       url: `/category/${slug}`,
       type: "website",
+      siteName: `${SITE_NAME} · ${BRAND_NAME}`,
     },
     twitter: {
       card: "summary_large_image",
@@ -49,16 +52,34 @@ export default async function CategoryPage({ params }: PageProps) {
   const category = getCategory(slug);
   if (!category) notFound();
 
+  const relatedPosts = getPostsByCategory(category.slug);
+
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: `${category.name} picks`,
+    name: `Best ${category.name} for console gaming`,
+    description: category.description,
+    url: absoluteUrl(`/category/${category.slug}`),
+    numberOfItems: category.products.length,
     itemListElement: category.products.map((p, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      name: p.name,
-      url: p.affiliateUrl,
-      description: p.summary,
+      item: {
+        "@type": "Product",
+        name: p.name,
+        description: p.summary,
+        brand: {
+          "@type": "Brand",
+          name: p.brand,
+        },
+        offers: {
+          "@type": "Offer",
+          url: p.affiliateUrl,
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          price: p.price.replace(/[^0-9.]/g, ""),
+        },
+      },
     })),
   };
 
@@ -129,6 +150,38 @@ export default async function CategoryPage({ params }: PageProps) {
           </div>
         </section>
 
+        {relatedPosts.length > 0 ? (
+          <section className="mt-16" aria-labelledby="guides-heading">
+            <h2
+              id="guides-heading"
+              className="font-[family-name:var(--font-display)] text-2xl text-cyan-50"
+            >
+              Related guides
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm text-teal-100/55">
+              Blog posts that dig into buying and setup decisions for this
+              category.
+            </p>
+            <ul className="mt-5 grid gap-4 sm:grid-cols-2">
+              {relatedPosts.map((post) => (
+                <li key={post.slug}>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="block rounded-md border border-cyan-400/15 px-4 py-3 transition hover:border-cyan-300/40"
+                  >
+                    <span className="font-[family-name:var(--font-display)] text-lg text-cyan-100">
+                      {post.title}
+                    </span>
+                    <span className="mt-1 block text-sm text-teal-100/55">
+                      {post.excerpt}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
         <nav
           className="mt-16 border-t border-cyan-400/15 pt-8"
           aria-label="Other categories"
@@ -149,6 +202,14 @@ export default async function CategoryPage({ params }: PageProps) {
                   </Link>
                 </li>
               ))}
+            <li>
+              <Link
+                href="/blog"
+                className="inline-flex min-h-10 items-center rounded-md border border-cyan-400/20 px-3 py-1.5 text-sm text-teal-100/75 transition hover:border-cyan-300/40 hover:text-cyan-100"
+              >
+                Blog
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

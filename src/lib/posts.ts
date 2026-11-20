@@ -550,6 +550,12 @@ export function getPost(slug: string): BlogPostWithAffiliate | undefined {
   return post ? withAffiliate(post) : undefined;
 }
 
+export function getPostsByCategory(
+  categorySlug: string,
+): BlogPostWithAffiliate[] {
+  return getPosts().filter((post) => post.categorySlug === categorySlug);
+}
+
 export function getAllPostSlugs(): string[] {
   return posts.map((p) => p.slug);
 }

@@ -39,6 +39,12 @@ export function SiteHeader() {
           >
             Blog
           </Link>
+          <Link
+            href="/about"
+            className="rounded-md px-3 py-1.5 text-sm text-teal-100/75 transition hover:bg-cyan-400/10 hover:text-cyan-100"
+          >
+            About
+          </Link>
         </nav>
 
         <button
@@ -91,6 +97,18 @@ export function SiteHeader() {
                 Blog
                 <span className="mt-0.5 block text-xs text-teal-100/45">
                   Storage, audio, display, and capture guides
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about"
+                className="block rounded-md px-3 py-3 text-sm text-teal-100/80 transition hover:bg-cyan-400/10 hover:text-cyan-100"
+                onClick={() => setOpen(false)}
+              >
+                About
+                <span className="mt-0.5 block text-xs text-teal-100/45">
+                  How NeonGulf picks and discloses affiliates
                 </span>
               </Link>
             </li>
