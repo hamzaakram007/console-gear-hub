@@ -50,9 +50,7 @@ export function SiteFooter() {
 
         <p className="mt-6 text-xs text-teal-100/40">
           © 2026 Console Gear Hub · Editorial comparisons for console players ·
-          Amazon product links use the{" "}
-          <code className="text-teal-100/55">AMAZON_TAG</code> environment
-          variable
+          Amazon product links may earn us a commission
         </p>
       </div>
     </footer>

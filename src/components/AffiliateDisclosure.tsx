@@ -6,7 +6,7 @@ const copy = {
   footer:
     "FTC affiliate disclosure: Console Gear Hub participates in the Amazon Associates Program and similar partner programs. When you click an Amazon link and buy something, we may earn a commission. That never changes the price you pay. Always confirm current price, shipping, returns, and seller details on Amazon before purchasing. Recommendations are independent editorial opinions for PS5 and Xbox Series setups. This site is not sponsored, endorsed, or approved by Amazon, Sony, Microsoft, Nintendo, or any manufacturer.",
   inline:
-    "As an Amazon Associate we may earn from qualifying purchases. Product links are tagged with our Associates ID when AMAZON_TAG is configured.",
+    "As an Amazon Associate we may earn from qualifying purchases. Buying through our links never changes the price you pay.",
 };
 
 export function AffiliateDisclosure({
