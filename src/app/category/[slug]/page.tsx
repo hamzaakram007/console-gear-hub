@@ -26,8 +26,9 @@ export async function generateMetadata({
   const { slug } = await params;
   const category = getCategory(slug);
   if (!category) return { title: "Category not found" };
-  const title = `Best ${category.name} for PS5 & Xbox — compared`;
-  const description = `${category.description} Best overall, budget, and premium picks with Amazon affiliate links.`;
+  const count = category.products.length;
+  const title = `Best ${category.name} for PS5 & Xbox — ${count} picks compared`;
+  const description = `${category.description} Curated picks with product photos, honest labels, and Amazon affiliate links.`;
   return {
     title,
     description,
@@ -69,10 +70,12 @@ export default async function CategoryPage({ params }: PageProps) {
         "@type": "Product",
         name: p.name,
         description: p.summary,
+        image: p.imageUrl ? [p.imageUrl] : undefined,
         brand: {
           "@type": "Brand",
           name: p.brand,
         },
+        sku: p.amazonAsin,
         offers: {
           "@type": "Offer",
           url: p.affiliateUrl,
@@ -84,6 +87,27 @@ export default async function CategoryPage({ params }: PageProps) {
     })),
   };
 
+  const productJsonLd = category.products.map((p) => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: p.name,
+    description: p.summary,
+    image: p.imageUrl ? [p.imageUrl] : undefined,
+    brand: {
+      "@type": "Brand",
+      name: p.brand,
+    },
+    sku: p.amazonAsin,
+    category: category.name,
+    offers: {
+      "@type": "Offer",
+      url: p.affiliateUrl,
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      price: p.price.replace(/[^0-9.]/g, ""),
+    },
+  }));
+
   return (
     <div className="page-wash relative">
       <div className="noise-overlay absolute inset-0" aria-hidden />
@@ -91,6 +115,13 @@ export default async function CategoryPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
+      {productJsonLd.map((schema) => (
+        <script
+          key={String(schema.sku ?? schema.name)}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
 
       <div className="relative mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
         <nav className="text-sm text-muted-soft" aria-label="Breadcrumb">
@@ -125,6 +156,9 @@ export default async function CategoryPage({ params }: PageProps) {
               >
                 {overall.affiliateLabel}
               </a>
+              <Link href="#spec-comparison" className="btn-secondary">
+                Compare all {category.products.length}
+              </Link>
               <p className="stock-note max-w-xs">
                 Best-overall pick — confirm live stock &amp; shipping on Amazon.
               </p>
@@ -140,16 +174,26 @@ export default async function CategoryPage({ params }: PageProps) {
             id="picks-heading"
             className="font-display text-2xl font-bold text-ink"
           >
-            Our three picks
+            Our {category.products.length} picks
           </h2>
-          <div className="mt-6 grid gap-10 border-t border-edge pt-8 lg:grid-cols-3 lg:gap-8">
+          <p className="mt-2 max-w-2xl text-sm text-muted">
+            Photo-first cards with a short benefit headline, one Amazon buy
+            button, and a compare link—no fake scarcity timers.
+          </p>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {category.products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <div key={product.id} className="group">
+                <ProductCard product={product} />
+              </div>
             ))}
           </div>
         </section>
 
-        <section className="mt-16" aria-labelledby="table-heading">
+        <section
+          id="spec-comparison"
+          className="mt-16 scroll-mt-24"
+          aria-labelledby="table-heading"
+        >
           <h2
             id="table-heading"
             className="font-display text-2xl font-bold text-ink"

@@ -57,8 +57,8 @@ export default function Home() {
           </h1>
           <p className="animate-fade-up-delay-2 mt-4 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             Side-by-side SSD, headset, display, and capture comparisons for PS5
-            and Xbox Series—three honest picks each, tagged Amazon buy links,
-            clear disclosure.
+            and Xbox Series—photo-first cards, honest pick labels, tagged Amazon
+            buy links, clear disclosure.
           </p>
           <div className="animate-fade-up-delay-2 mt-8 flex flex-wrap items-center gap-3">
             {featuredOverall ? (
@@ -97,8 +97,9 @@ export default function Home() {
           Shop by category
         </h2>
         <p className="mt-2 max-w-2xl text-muted">
-          Four gear lanes. Three research-backed picks each—best overall, best
-          budget, and best premium—with verified ASINs and tagged Amazon links.
+          Four gear lanes with curated shortlists (about 4–6 picks each)—best
+          overall, best budget, best premium, best value, and top picks—with
+          real Amazon product photos and tagged buy links.
         </p>
 
         <ul className="mt-10 grid gap-0 sm:grid-cols-2">
@@ -160,8 +161,8 @@ export default function Home() {
                 d: "Heatsink clearance, HDMI 2.1 / VRR, dialogue-friendly audio, and capture paths that fit living-room setups—not PC mod sheets.",
               },
               {
-                t: "Three clear lanes",
-                d: "Best overall, best budget, and best premium so you can decide without scrolling endless listicles.",
+                t: "Clear pick labels",
+                d: "Best overall, best budget, best premium, best value, and top picks—honest social proof, not fake scarcity.",
               },
               {
                 t: "Honest affiliate path",

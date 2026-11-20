@@ -1,17 +1,25 @@
 import productsData from "@/data/products.json";
 import {
   affiliateCtaLabel,
+  amazonProductImageUrl,
   buildAffiliateUrl,
   type AffiliateTarget,
 } from "@/lib/affiliate";
 
-export type PickType = "best-overall" | "best-budget" | "best-premium";
+export type PickType =
+  | "best-overall"
+  | "best-budget"
+  | "best-premium"
+  | "best-value"
+  | "top-pick";
 
 export type Product = {
   id: string;
   name: string;
   brand: string;
   pick: PickType;
+  /** Short benefit line shown under the photo (sales psychology). */
+  headline: string;
   price: string;
   priceNote: string;
   summary: string;
@@ -26,6 +34,8 @@ export type Product = {
 export type ProductWithAffiliate = Product & {
   affiliateUrl: string;
   affiliateLabel: string;
+  imageUrl: string | null;
+  imageAlt: string;
 };
 
 export type Category = {
@@ -58,10 +68,13 @@ function withAffiliate(product: Product): ProductWithAffiliate {
     amazonAsin: product.amazonAsin,
     amazonKeywords: product.amazonKeywords,
   };
+  const asin = product.amazonAsin?.trim();
   return {
     ...product,
     affiliateUrl: buildAffiliateUrl(target),
     affiliateLabel: affiliateCtaLabel(),
+    imageUrl: asin ? amazonProductImageUrl(asin) : null,
+    imageAlt: `${product.name} — ${product.brand} product photo`,
   };
 }
 
@@ -85,12 +98,16 @@ export const pickLabels: Record<PickType, string> = {
   "best-overall": "Best overall",
   "best-budget": "Best budget",
   "best-premium": "Best premium",
+  "best-value": "Best value",
+  "top-pick": "Top pick",
 };
 
 export const pickShortLabels: Record<PickType, string> = {
   "best-overall": "Overall",
   "best-budget": "Budget",
   "best-premium": "Premium",
+  "best-value": "Value",
+  "top-pick": "Top",
 };
 
 export const specLabels: Record<string, string> = {

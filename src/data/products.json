@@ -4,7 +4,7 @@
       "slug": "ssd",
       "name": "SSD Storage",
       "tagline": "Expand console storage for 100+ GB story installs without constant uninstalls.",
-      "description": "Picks drawn from 2025–2026 console storage roundups (Tom’s Hardware, TechSpot, and PS5 heatsink fit guides). We only list PCIe 4.0 NVMe drives that clear Sony’s ~5,500 MB/s bar and ship with a console-safe heatsink—plus clear notes when Xbox Series needs a different path (licensed Expansion Card or USB archive).",
+      "description": "Curated PS5 and Xbox Series storage picks from 2025–2026 roundups. Internal Gen4 heatsink NVMe for PlayStation, plus a licensed Xbox Expansion Card path—no USB-archive confusion.",
       "consoleAngle": "PS5 / PS5 Pro: install a heatsinked PCIe 4.0 M.2 in the expansion bay. Xbox Series X|S: use a Seagate/WD licensed Expansion Card for full-speed installs; USB externals are for media and cold storage only.",
       "specKeys": ["capacity", "interface", "consoleCompat", "readSpeed", "formFactor", "warranty"],
       "products": [
@@ -13,9 +13,10 @@
           "name": "WD_BLACK SN850X 2TB with Heatsink",
           "brand": "Western Digital",
           "pick": "best-overall",
+          "headline": "Top pick for most PS5 upgrades",
           "price": "$170",
           "priceNote": "typical street · verify live",
-          "summary": "Still the default PS5 upgrade in 2026 roundups: factory heatsink that fits the expansion bay, sequential reads up to 7,300 MB/s, and 2 TB that actually covers a modern story library plus patches. Tom’s Hardware keeps the SN850X as its best overall PS5 SSD for performance-per-dollar.",
+          "summary": "Still the default PS5 upgrade in 2026 roundups: factory heatsink that fits the expansion bay, sequential reads up to 7,300 MB/s, and 2 TB that covers a modern story library plus patches.",
           "bestFor": "Most PS5 owners who want one internal install and forget about it",
           "pros": [
             "Heatsink SKU (WDS200T2XHE) fits the PS5 bay without a third-party cooler",
@@ -42,9 +43,10 @@
           "name": "Crucial T500 2TB with Heatsink",
           "brand": "Crucial",
           "pick": "best-budget",
+          "headline": "Best value Gen4 heatsink SSD",
           "price": "$140",
           "priceNote": "typical street · verify live",
-          "summary": "When the SN850X heatsink is on sale-tax territory, the T500 with factory cooler is the value Gen4 pick reviewers keep naming: up to 7,400 MB/s read, PS5-compatible heatsink, and 2 TB of Micron TLC without stepping down to a USB external.",
+          "summary": "When the SN850X heatsink is on sale-tax territory, the T500 with factory cooler is the value Gen4 pick reviewers keep naming: up to 7,400 MB/s read and 2 TB of Micron TLC.",
           "bestFor": "PS5 players who want internal Gen4 speed at a lower street price",
           "pros": [
             "Integrated heatsink meets PS5 height/thermal guidance",
@@ -71,9 +73,10 @@
           "name": "Samsung 990 PRO 2TB with Heatsink",
           "brand": "Samsung",
           "pick": "best-premium",
+          "headline": "Peak Gen4 when brand tools matter",
           "price": "$220",
           "priceNote": "typical street · verify live",
-          "summary": "Premium pick when you want the fastest mature Gen4 platform with a slim PS5-rated heatsink. Review sites now treat the post-firmware 990 PRO as a top alternate to the SN850X—especially if Magician tooling or brand support matters to you.",
+          "summary": "Premium pick when you want the fastest mature Gen4 platform with a slim PS5-rated heatsink—especially if Magician tooling or brand support matters to you.",
           "bestFor": "Buyers who want peak Gen4 reads and a thin official heatsink fit",
           "pros": [
             "Up to 7,450 MB/s sequential read on the heatsink SKU",
@@ -94,6 +97,66 @@
           },
           "amazonAsin": "B0BHJDY57J",
           "amazonKeywords": "Samsung 990 PRO 2TB heatsink PS5"
+        },
+        {
+          "id": "ssd-endurance",
+          "name": "Seagate FireCuda 530 2TB with Heatsink",
+          "brand": "Seagate",
+          "pick": "best-value",
+          "headline": "Best value for heavy write endurance",
+          "price": "$190",
+          "priceNote": "typical street · verify live",
+          "summary": "EKWB low-profile heatsink, up to 7,300 MB/s, and class-leading TBW with Rescue Data Recovery Services—strong when you reinstall and archive a lot.",
+          "bestFor": "PS5 owners who reinstall often or keep large capture archives on the console drive",
+          "pros": [
+            "PS5-ready heatsink from Seagate + EKWB",
+            "High endurance rating with Rescue Services included",
+            "Mature Gen4 performer still widely stocked"
+          ],
+          "cons": [
+            "Street price sits above the T500 value lane",
+            "Not an Xbox Expansion Card substitute"
+          ],
+          "specs": {
+            "capacity": "2 TB",
+            "interface": "PCIe 4.0 NVMe",
+            "consoleCompat": "PS5 expansion slot",
+            "readSpeed": "Up to 7,300 MB/s",
+            "formFactor": "M.2 2280 + EKWB heatsink",
+            "warranty": "5 years + Rescue"
+          },
+          "amazonAsin": "B0977K2C74",
+          "amazonKeywords": "Seagate FireCuda 530 2TB heatsink PS5"
+        },
+        {
+          "id": "ssd-xbox",
+          "name": "Seagate Storage Expansion Card 1TB",
+          "brand": "Seagate",
+          "pick": "top-pick",
+          "headline": "Top pick for Xbox Series installs",
+          "price": "$150",
+          "priceNote": "typical street · verify live",
+          "summary": "Official Xbox Velocity Architecture card: plug into the Series X|S slot and play at full console SSD speed—no USB archive workaround.",
+          "bestFor": "Xbox Series X|S players who need more install slots at native speed",
+          "pros": [
+            "Licensed for full-speed Xbox Series gameplay",
+            "True plug-and-play—no heatsink install",
+            "Quick Resume and Velocity features stay intact"
+          ],
+          "cons": [
+            "Cost per TB is higher than DIY PS5 NVMe",
+            "1 TB fills quickly with modern day-one titles"
+          ],
+          "specs": {
+            "capacity": "1 TB",
+            "interface": "Xbox Expansion Card",
+            "consoleCompat": "Xbox Series X|S only",
+            "readSpeed": "Matches console SSD path",
+            "formFactor": "Proprietary expansion card",
+            "warranty": "3 years"
+          },
+          "amazonAsin": "B08K48F6QZ",
+          "amazonKeywords": "Seagate Storage Expansion Card 1TB Xbox"
         }
       ]
     },
@@ -101,7 +164,7 @@
       "slug": "headset",
       "name": "Headsets",
       "tagline": "Hear story dialogue and positional cues without drowning the mix.",
-      "description": "Console-first picks from 2026 headset guides that emphasize platform reality: Xbox needs Xbox-certified wireless, PS5 is flexible with USB dongles, and a 3.5 mm jack still wins for zero-setup nights. We favor long-session comfort, usable boom mics, and dual wireless where it actually helps.",
+      "description": "Console-first headset picks emphasizing platform reality: Xbox-certified wireless, PS5 USB/Link options, and a durable wired classic. Comfort, usable boom mics, and honest dual-wireless where it helps.",
       "consoleAngle": "Prefer the Xbox (“X”) wireless SKU when you play both consoles—those dongles usually cover PS5/PC too. Wired 3.5 mm works on DualSense and Xbox controllers. Sony Pulse gear is excellent on PS5/Portal but not a dual-console default.",
       "specKeys": ["connection", "mic", "battery", "surround", "weight", "platformNotes"],
       "products": [
@@ -110,9 +173,10 @@
           "name": "SteelSeries Arctis Nova 7X Wireless Gen 2",
           "brand": "SteelSeries",
           "pick": "best-overall",
+          "headline": "Top pick for Xbox + PS5 households",
           "price": "$180",
           "priceNote": "typical street · verify live",
-          "summary": "Best cross-console wireless pick in current guides: USB-C 2.4 GHz dongle that covers Xbox, PS5, and PC, simultaneous Bluetooth for calls, and up to ~50 hours of battery. ClearCast Gen 2 boom and AirWeave pads keep party chat and long campaigns usable.",
+          "summary": "Best cross-console wireless pick in current guides: USB-C 2.4 GHz dongle that covers Xbox, PS5, and PC, simultaneous Bluetooth, and up to ~50 hours of battery.",
           "bestFor": "Households that hop between Xbox and PlayStation",
           "pros": [
             "One Xbox-certified dongle that also works on PS5 / PC",
@@ -139,9 +203,10 @@
           "name": "HyperX Cloud III Wired",
           "brand": "HyperX",
           "pick": "best-budget",
+          "headline": "Best value wired console headset",
           "price": "$80",
           "priceNote": "typical street · verify live",
-          "summary": "The durable wired classic updated for modern consoles: angled 53 mm drivers, memory-foam pads, aluminum frame, and a clear detachable boom. Ships with 3.5 mm plus USB-C/A paths so DualSense, Xbox, and Switch all stay simple—no battery anxiety on launch night.",
+          "summary": "Durable wired classic: angled 53 mm drivers, memory-foam pads, aluminum frame, and a clear detachable boom—no battery anxiety on launch night.",
           "bestFor": "Budget console players who want reliable chat and comfort",
           "pros": [
             "Works on PS5 / Xbox / Switch without proprietary dongles",
@@ -168,9 +233,10 @@
           "name": "PlayStation Pulse Elite",
           "brand": "Sony",
           "pick": "best-premium",
+          "headline": "Best premium for PS5 dialogue detail",
           "price": "$150",
           "priceNote": "typical street · verify live",
-          "summary": "Premium PS5 immersion: planar magnetic drivers, lossless PlayStation Link wireless, retractable AI noise-reject mic, and up to 30 hours of battery. TechRadar and other 2026 guides still call it the best official PlayStation headset—especially if you also use a Portal.",
+          "summary": "Planar magnetic drivers, lossless PlayStation Link wireless, retractable AI noise-reject mic—still the best official PlayStation headset if you also use a Portal.",
           "bestFor": "PS5 / Portal players chasing dialogue detail and Tempest 3D",
           "pros": [
             "Planar drivers deliver cleaner dialogue and staging",
@@ -191,6 +257,66 @@
           },
           "amazonAsin": "B0CMDH9M5W",
           "amazonKeywords": "PlayStation Pulse Elite Wireless Headset"
+        },
+        {
+          "id": "headset-astro",
+          "name": "Logitech G Astro A50 X",
+          "brand": "Logitech G",
+          "pick": "top-pick",
+          "headline": "Top pick for simultaneous Xbox + PS5 + PC",
+          "price": "$380",
+          "priceNote": "typical street · verify live",
+          "summary": "Base-station PLAYSYNC headset that stays connected to Xbox, PS5, and PC at once, with HDMI 2.1 pass-through for 4K120 VRR living rooms.",
+          "bestFor": "Multi-console setups that refuse to swap dongles every night",
+          "pros": [
+            "Omni-platform base with on-ear system switching",
+            "HDMI 2.1 pass-through for 4K120 / VRR displays",
+            "Broadcast-quality LIGHTSPEED mic uplink"
+          ],
+          "cons": [
+            "Premium price vs Nova 7X for similar day-to-day use",
+            "Base station needs HDMI routing space behind the TV"
+          ],
+          "specs": {
+            "connection": "LIGHTSPEED + Bluetooth + HDMI base",
+            "mic": "Broadcast-quality boom uplink",
+            "battery": "Up to 24 hours (typical)",
+            "surround": "PRO-G Graphene spatial ready",
+            "weight": "~370 g",
+            "platformNotes": "Xbox / PS5 / PC simultaneous via A50 X base"
+          },
+          "amazonAsin": "B0BRXJN3KY",
+          "amazonKeywords": "Astro A50 X Wireless Headset"
+        },
+        {
+          "id": "headset-anc",
+          "name": "Turtle Beach Stealth Pro",
+          "brand": "Turtle Beach",
+          "pick": "best-value",
+          "headline": "Best value when ANC matters",
+          "price": "$280",
+          "priceNote": "typical street · verify live",
+          "summary": "Swappable dual batteries, serious active noise cancellation, and Xbox/PS5 multiplatform wireless—strong when the living room is loud.",
+          "bestFor": "Players who want ANC and hot-swap batteries without leaving console chat",
+          "pros": [
+            "Adjustable ANC with stealthy dual-battery swaps",
+            "2.4 GHz + Bluetooth dual-connect",
+            "Works across Xbox Series and PlayStation"
+          ],
+          "cons": [
+            "Heavier than Nova 7X for long campaigns",
+            "App EQ experience varies by platform"
+          ],
+          "specs": {
+            "connection": "2.4 GHz transmitter + Bluetooth 5.1",
+            "mic": "S.M.A.R.T noise-cancelling boom",
+            "battery": "Dual swappable packs",
+            "surround": "Spatial / Atmos ready",
+            "weight": "~329 g",
+            "platformNotes": "Xbox / PS5 / PC / Mac via included transmitter"
+          },
+          "amazonAsin": "B0BX77C1LD",
+          "amazonKeywords": "Turtle Beach Stealth Pro Wireless"
         }
       ]
     },
@@ -198,7 +324,7 @@
       "slug": "tv-monitor",
       "name": "TVs & Monitors",
       "tagline": "Display picks tuned for console HDMI 2.1, VRR, and HDR story nights.",
-      "description": "Living-room and desk picks grounded in 2025–2026 gaming TV tests (What Hi-Fi?, Tom’s Guide, RTINGS-class feature checks). Priority order: four full-bandwidth HDMI 2.1 ports, VRR + ALLM, honest 4K120 console paths, and brightness that matches your room—not PC-only 240 Hz marketing.",
+      "description": "Living-room and desk picks grounded in 2025–2026 gaming display tests. Priority: full-bandwidth HDMI 2.1, VRR + ALLM, honest 4K120 console paths, and brightness that matches your room.",
       "consoleAngle": "PS5 and Xbox Series X need HDMI 2.1 with VRR/ALLM for the full feature set. A 144 Hz OLED helps PC later, but consoles top out at 4K120. Bright living rooms may prefer Mini-LED over OLED.",
       "specKeys": ["size", "panel", "refresh", "hdmi", "hdr", "vrr"],
       "products": [
@@ -207,9 +333,10 @@
           "name": "LG C5 55\" OLED evo",
           "brand": "LG",
           "pick": "best-overall",
+          "headline": "Top pick for couch console OLED",
           "price": "$950",
           "priceNote": "typical street · verify live",
-          "summary": "2025 C-series is the console living-room default in current awards: four HDMI 2.1 ports, VRR/ALLM/G-Sync/FreeSync, Dolby Vision gaming, and brighter OLED evo panels than the C4. What Hi-Fi? and Tom’s Guide both land on the C5 as the best all-round gaming TV for PS5 and Xbox.",
+          "summary": "2025 C-series console living-room default: four HDMI 2.1 ports, VRR/ALLM/G-Sync/FreeSync, Dolby Vision gaming, and brighter OLED evo panels than the C4.",
           "bestFor": "Couch console play in a light-controlled room",
           "pros": [
             "Four full-bandwidth HDMI 2.1 ports for console + soundbar",
@@ -236,9 +363,10 @@
           "name": "LG UltraGear 27GS75Q-B 27\"",
           "brand": "LG",
           "pick": "best-budget",
+          "headline": "Best value desk console monitor",
           "price": "$175",
           "priceNote": "typical street · verify live",
-          "summary": "Desk or dorm console pick: sharp 1440p IPS, 180 Hz panel, FreeSync / G-Sync Compatible VRR, and HDMI inputs that keep PS5/Xbox looking crisp up close. You give up living-room 4K OLED drama, but HUD text and aim clarity stay excellent under $200.",
+          "summary": "Sharp 1440p IPS, 180 Hz panel, FreeSync / G-Sync Compatible VRR—excellent HUD clarity under $200 when a huge TV is overkill.",
           "bestFor": "Bedroom / office console setups where 27\" beats a huge TV",
           "pros": [
             "Sharp 1440p text and HUDs",
@@ -265,9 +393,10 @@
           "name": "Samsung QN90D 65\" Neo QLED",
           "brand": "Samsung",
           "pick": "best-premium",
+          "headline": "Best premium for bright living rooms",
           "price": "$1,200",
           "priceNote": "typical street · verify live",
-          "summary": "Bright-room premium: Mini-LED punch that keeps HDR readable with the curtains open, four HDMI 2.1 ports, 4K120 gaming, and a 65\" canvas for couch co-op. Choose this over OLED when daylight and peak highlights matter more than perfect black floors.",
+          "summary": "Mini-LED punch that keeps HDR readable with the curtains open, four HDMI 2.1 ports, and a 65\" canvas for couch co-op.",
           "bestFor": "Sunny living rooms that still want 4K120 console gaming",
           "pros": [
             "Excellent peak brightness for daytime play",
@@ -288,6 +417,96 @@
           },
           "amazonAsin": "B0CV9PB1F4",
           "amazonKeywords": "Samsung QN90D 65 QN65QN90D"
+        },
+        {
+          "id": "display-value-tv",
+          "name": "TCL 65\" QM8 Mini-LED",
+          "brand": "TCL",
+          "pick": "best-value",
+          "headline": "Best value 65\" Mini-LED gaming TV",
+          "price": "$1,000",
+          "priceNote": "typical street · verify live",
+          "summary": "Dense local dimming, Game Accelerator up to 240 Hz VRR, and Dolby Vision—strong brightness-per-dollar when OLED is out of budget.",
+          "bestFor": "Buyers who want a bright 65\" console TV without flagship OLED pricing",
+          "pros": [
+            "Mini-LED contrast that holds up with lights on",
+            "Console-friendly VRR / ALLM gaming features",
+            "Often undercuts Samsung Neo QLED at similar size"
+          ],
+          "cons": [
+            "Processing and motion can trail LG/Samsung flagships",
+            "Confirm the exact QM8 / QM851G SKU before buying"
+          ],
+          "specs": {
+            "size": "65\"",
+            "panel": "QLED Mini-LED",
+            "refresh": "120 Hz native / up to 240 Hz VRR",
+            "hdmi": "HDMI 2.1 gaming ports",
+            "hdr": "Dolby Vision IQ / HDR10+",
+            "vrr": "FreeSync + Game Accelerator"
+          },
+          "amazonAsin": "B0C1J4MPBB",
+          "amazonKeywords": "TCL 65 QM8 Mini-LED Google TV"
+        },
+        {
+          "id": "display-bright",
+          "name": "Hisense 65\" U8N Mini-LED",
+          "brand": "Hisense",
+          "pick": "top-pick",
+          "headline": "Top pick for daylight HDR punch",
+          "price": "$900",
+          "priceNote": "typical street · verify live",
+          "summary": "144 Hz Game Mode Pro, Dolby Vision IQ, and very high Mini-LED peak brightness—built for sunlit rooms that still want console VRR.",
+          "bestFor": "Bright rooms where peak HDR highlights matter more than perfect OLED blacks",
+          "pros": [
+            "High peak brightness with many dimming zones",
+            "144 Hz VRR gaming features for Series X / PS5 paths",
+            "Usually priced under flagship Neo QLED / OLED"
+          ],
+          "cons": [
+            "Near-black uniformity trails premium OLEDs",
+            "Smart-TV software polish varies by firmware"
+          ],
+          "specs": {
+            "size": "65\"",
+            "panel": "Mini-LED ULED",
+            "refresh": "144 Hz Game Mode Pro",
+            "hdmi": "HDMI 2.1 ×2+",
+            "hdr": "Dolby Vision IQ / HDR10+",
+            "vrr": "FreeSync Premium Pro"
+          },
+          "amazonAsin": "B0CY4SM6P8",
+          "amazonKeywords": "Hisense 65U8N Mini-LED"
+        },
+        {
+          "id": "display-oled-value",
+          "name": "LG B4 55\" OLED",
+          "brand": "LG",
+          "pick": "top-pick",
+          "headline": "Top pick OLED when C5 is too much",
+          "price": "$750",
+          "priceNote": "typical street · verify live",
+          "summary": "Four HDMI 2.1 ports, Dolby Vision, VRR/ALLM—same console essentials as the C-series with a slightly dimmer panel for less money.",
+          "bestFor": "Dark-room OLED buyers hunting a lower street price than C5",
+          "pros": [
+            "True OLED blacks for cinematic story nights",
+            "Full console HDMI 2.1 / VRR feature set",
+            "Often the cheapest current LG OLED on sale"
+          ],
+          "cons": [
+            "Brighter C5 / G-series panels look better with lights on",
+            "Prior-year model—confirm warranty and firmware support"
+          ],
+          "specs": {
+            "size": "55\"",
+            "panel": "OLED",
+            "refresh": "120 Hz",
+            "hdmi": "HDMI 2.1 ×4",
+            "hdr": "Dolby Vision / HDR10",
+            "vrr": "ALLM + VRR + 4K120"
+          },
+          "amazonAsin": "B0CVRTFKFC",
+          "amazonKeywords": "LG B4 55 OLED OLED55B4PUA"
         }
       ]
     },
@@ -295,7 +514,7 @@
       "slug": "capture-card",
       "name": "Capture Cards",
       "tagline": "Record and stream console footage without turning your living room into a PC LAN.",
-      "description": "Creator picks based on 2026 capture-card buyer guides after Elgato retired the HD60 X. We rank for honest HDMI pass-through (so your TV keeps 4K/HDR/VRR), USB convenience for laptop streamers, and capture headroom that matches real Twitch/YouTube encode targets—not brochure fantasy.",
+      "description": "Creator picks ranked for honest HDMI pass-through (so your TV keeps 4K/HDR/VRR), USB convenience for laptop streamers, and capture headroom that matches real Twitch/YouTube encode targets.",
       "consoleAngle": "PS5 and Xbox Series output HDMI; match pass-through to your display (4K60 vs 4K120). Most live streams still encode at 1080p60—buy 4K capture only if you archive or edit in 4K.",
       "specKeys": ["passthrough", "capture", "interface", "hdr", "formFactor", "latency"],
       "products": [
@@ -304,9 +523,10 @@
           "name": "Elgato Game Capture 4K S",
           "brand": "Elgato",
           "pick": "best-overall",
+          "headline": "Top pick for most new console streamers",
           "price": "$150",
           "priceNote": "typical street · verify live",
-          "summary": "The current mid-tier default now that HD60 X is discontinued: USB-C capture up to 4K60 with 4K60 HDR/VRR pass-through, plus high-frame 1440p/1080p modes. Works cleanly with PS5 and Xbox Series into OBS without needing a desktop PCIe slot.",
+          "summary": "USB-C capture up to 4K60 with 4K60 HDR/VRR pass-through—clean PS5/Xbox path into OBS without a desktop PCIe slot.",
           "bestFor": "Most console streamers and highlight editors buying new",
           "pros": [
             "4K60 capture replaces the old HD60 X ceiling",
@@ -333,9 +553,10 @@
           "name": "Elgato Game Capture Neo",
           "brand": "Elgato",
           "pick": "best-budget",
+          "headline": "Best value first capture box",
           "price": "$100",
           "priceNote": "typical street · verify live",
-          "summary": "Entry creator box that still does the important part right: 4K60 HDR pass-through to your TV while capturing 1080p60 for Discord clips, TikTok, and first OBS streams. Smaller learning curve and lower price than 4K S / 4K X.",
+          "summary": "4K60 HDR pass-through while capturing 1080p60—perfect for Discord clips, TikTok, and first OBS streams.",
           "bestFor": "First-time console clip creators on a laptop",
           "pros": [
             "Affordable Elgato reliability with real 4K60 HDR pass-through",
@@ -362,9 +583,10 @@
           "name": "Elgato Game Capture 4K X",
           "brand": "Elgato",
           "pick": "best-premium",
+          "headline": "Best premium for 4K120 living rooms",
           "price": "$250",
           "priceNote": "typical street · verify live",
-          "summary": "Premium external card for high-refresh living rooms: HDMI 2.1 pass-through up to 4K144 with VRR, and capture headroom up to 4K144 over USB 3.2 Gen 2. Ideal when your Series X / PS5 Pro display runs 4K120 and you refuse to drop the TV to 4K60 just to stream.",
+          "summary": "HDMI 2.1 pass-through up to 4K144 with VRR—ideal when Series X / PS5 Pro runs 4K120 and you refuse to drop the TV to stream.",
           "bestFor": "4K120 console setups that still want USB (no PCIe install)",
           "pros": [
             "HDMI 2.1 keeps 4K120 gameplay intact on the TV",
@@ -385,6 +607,66 @@
           },
           "amazonAsin": "B0CPFWXMBL",
           "amazonKeywords": "Elgato Game Capture 4K X"
+        },
+        {
+          "id": "capture-classic",
+          "name": "Elgato HD60 X",
+          "brand": "Elgato",
+          "pick": "best-value",
+          "headline": "Best value proven mid-tier card",
+          "price": "$150",
+          "priceNote": "typical street · verify live",
+          "summary": "Still widely available: 1080p60 HDR10 or 4K30 capture with ultra-low latency—solid if you find it cheaper than 4K S.",
+          "bestFor": "Streamers who want a known-good Elgato path without chasing newest SKUs",
+          "pros": [
+            "Mature driverless workflow with OBS",
+            "HDR10 capture option at 1080p60",
+            "Often discounted as 4K S takes the spotlight"
+          ],
+          "cons": [
+            "Superseded by 4K S for new 4K60 buyers",
+            "Not HDMI 2.1 / 4K120 pass-through"
+          ],
+          "specs": {
+            "passthrough": "4K60 HDR10 / VRR (typical)",
+            "capture": "1080p60 HDR10 or 4K30",
+            "interface": "USB 3.0",
+            "hdr": "HDR10 capture + pass-through",
+            "formFactor": "Compact USB",
+            "latency": "Ultra-low"
+          },
+          "amazonAsin": "B09V1KJ3J4",
+          "amazonKeywords": "Elgato HD60 X capture card"
+        },
+        {
+          "id": "capture-aver",
+          "name": "AVerMedia Live Gamer Ultra 2.1",
+          "brand": "AVerMedia",
+          "pick": "top-pick",
+          "headline": "Top pick HDMI 2.1 alternative to 4K X",
+          "price": "$230",
+          "priceNote": "typical street · verify live",
+          "summary": "GC553G2 with 4K144 HDR/VRR pass-through, party-chat ports, and high-frame Windows capture—strong Elgato 4K X competitor.",
+          "bestFor": "Creators who want HDMI 2.1 pass-through plus party-chat capture jacks",
+          "pros": [
+            "HDMI 2.1 pass-through up to 4K144 HDR / VRR",
+            "Built-in 3.5 mm party-chat / headset path",
+            "USB-C 10 Gbps for modern laptops"
+          ],
+          "cons": [
+            "Software ecosystem is less ubiquitous than Elgato",
+            "Full modes need a solid USB 3.2 Gen 2 host"
+          ],
+          "specs": {
+            "passthrough": "Up to 4K144 HDR / VRR",
+            "capture": "Up to 4K144 (Windows Streaming Center)",
+            "interface": "USB 3.2 Gen 2 Type-C",
+            "hdr": "HDR10 pass-through + capture",
+            "formFactor": "Compact USB",
+            "latency": "Near-zero pass-through"
+          },
+          "amazonAsin": "B0CJX9VKKT",
+          "amazonKeywords": "AVerMedia Live Gamer Ultra 2.1 GC553G2"
         }
       ]
     }

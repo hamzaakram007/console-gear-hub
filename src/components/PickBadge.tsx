@@ -4,6 +4,8 @@ const styles: Record<PickType, string> = {
   "best-overall": "border-neon/40 bg-neon-soft text-neon-ink",
   "best-budget": "border-trust/35 bg-trust/10 text-trust",
   "best-premium": "border-gulf/35 bg-gulf-soft text-gulf",
+  "best-value": "border-trust/35 bg-trust/10 text-trust",
+  "top-pick": "border-neon/40 bg-neon-soft text-neon-ink",
 };
 
 export function PickBadge({ pick }: { pick: PickType }) {

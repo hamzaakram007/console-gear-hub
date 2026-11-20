@@ -78,8 +78,9 @@ export default function AboutPage() {
             <p className="mt-3">
               We publish side-by-side comparisons for SSD storage, headsets, TVs
               & monitors, and capture cards aimed at PS5 and Xbox Series. Each
-              category lists three picks—best overall, best budget, and best
-              premium—with specs, trade-offs, and tagged Amazon product links.
+              category lists a curated shortlist (about 4–6 picks) with product
+              photos, benefit headlines, specs, trade-offs, and tagged Amazon
+              product links.
             </p>
             <p className="mt-3">
               The{" "}

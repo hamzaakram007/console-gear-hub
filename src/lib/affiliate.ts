@@ -40,3 +40,13 @@ export function affiliateCtaLabel(): string {
     ? "Check price on Amazon"
     : "Check price on Amazon (tag pending)";
 }
+
+/**
+ * Associates-safe Amazon media CDN product image by ASIN.
+ * Pattern used widely by Amazon Associates creatives / image links.
+ */
+export function amazonProductImageUrl(asin: string, size = 500): string {
+  const clean = asin.trim().toUpperCase();
+  const dim = Math.min(Math.max(Math.round(size), 200), 1000);
+  return `https://m.media-amazon.com/images/P/${encodeURIComponent(clean)}.01._SCLZZZZZZZ_SX${dim}_.jpg`;
+}

@@ -69,7 +69,7 @@ export function ComparisonTable({
               : "border-edge text-muted hover:border-gulf hover:text-ink"
           }`}
         >
-          All three
+          All picks
         </button>
         {products.map((p) => (
           <button
@@ -83,6 +83,9 @@ export function ComparisonTable({
             }`}
           >
             {pickShortLabels[p.pick]}
+            <span className="ml-1 font-normal text-muted-soft">
+              · {p.brand}
+            </span>
           </button>
         ))}
       </div>
